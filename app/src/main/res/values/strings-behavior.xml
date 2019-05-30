@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="behavior_img_header">com.kevin.demo.coordinatorlayout.behavior.ImgHeaderBehavior</string>
+    <string name="behavior_scroll_view">com.kevin.demo.coordinatorlayout.behavior.ScrollViewBehavior</string>
+</resources>

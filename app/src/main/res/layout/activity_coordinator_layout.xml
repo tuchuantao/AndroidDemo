@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white">
+
+        <FrameLayout
+                android:id="@+id/head_layout"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                app:layout_behavior=".coordinatorlayout.behavior.ImgHeaderBehavior"
+                android:background="@android:color/darker_gray">
+
+            <ImageView
+                    android:id="@+id/head_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/img"
+                    android:scaleType="fitCenter"/>
+        </FrameLayout>
+
+        <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none"
+                android:paddingBottom="30dp"
+                android:paddingTop="15dp"
+                app:layout_anchor="@id/head_layout"
+                app:layout_anchorGravity="bottom"
+                app:layout_behavior=".coordinatorlayout.behavior.ScrollViewBehavior">
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n
+这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容\n这是ScrollView测试内容"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"/>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
