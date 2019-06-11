@@ -3,6 +3,7 @@ package com.kevin.demo
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import com.kevin.demo.banner.BannerActivity
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
@@ -22,6 +23,11 @@ class MainActivity : BaseActivity() {
     private fun initView() {
         binding.btnCoordinatorLayout.setOnClickListener {
             var intent = Intent(this, CoordinatorLayoutActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnBannerLayout.setOnClickListener {
+            var intent = Intent(this, BannerActivity::class.java)
             startActivity(intent)
         }
     }

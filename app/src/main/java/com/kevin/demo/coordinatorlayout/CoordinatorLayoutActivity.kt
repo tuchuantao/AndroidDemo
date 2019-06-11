@@ -24,7 +24,6 @@ class CoordinatorLayoutActivity : BaseActivity() {
     private fun initView() {
         title = "CoordinatorLayoutActivity"
 
-
         val maxHeight = (ScreenUtil.getScreenWidth(this) * 1.01).toInt()
         val layoutParams = binding.headLayout.layoutParams
         layoutParams.height = maxHeight

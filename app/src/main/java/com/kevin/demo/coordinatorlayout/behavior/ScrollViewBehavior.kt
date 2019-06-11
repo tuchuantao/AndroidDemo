@@ -1,13 +1,11 @@
 package com.kevin.demo.coordinatorlayout.behavior
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.widget.NestedScrollView
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
-import android.widget.ScrollView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.widget.NestedScrollView
 
 /**
  * Create by Kevin-Tu on 2019/5/30.

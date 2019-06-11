@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="BannerIndicatorView">
+        <attr name="selectDrawable" format="reference"/>
+        <attr name="unselectDrawable" format="reference"/>
+    </declare-styleable>
+
+    <!-- BannerLayout的自定义属性 -->
+    <declare-styleable name="BannerLayout">
+        <attr name="pageMargin" format="dimension"/>
+        <attr name="autoWheel" format="boolean"/>
+        <attr name="wheelDuration" format="integer"/>
+        <attr name="cycleEnable" format="boolean"/>
+    </declare-styleable>
 </resources>
