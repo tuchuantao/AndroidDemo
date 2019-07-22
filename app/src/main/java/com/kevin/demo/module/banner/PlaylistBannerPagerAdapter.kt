@@ -1,10 +1,10 @@
-package com.kevin.demo.banner
+package com.kevin.demo.module.banner
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.kevin.demo.banner.base.BannerBasePagerAdapter
+import com.kevin.demo.module.banner.base.BannerBasePagerAdapter
 import com.kevin.demo.databinding.ItemBannerBinding
 
 class PlaylistBannerPagerAdapter(private val context: Context) : BannerBasePagerAdapter<String>() {

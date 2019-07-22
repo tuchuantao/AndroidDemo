@@ -1,4 +1,4 @@
-package com.kevin.demo.coordinatorlayout.behavior
+package com.kevin.demo.module.coordinatorlayout.behavior
 
 import android.content.Context
 import android.util.AttributeSet

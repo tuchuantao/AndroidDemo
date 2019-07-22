@@ -10,7 +10,7 @@
                 android:id="@+id/head_layout"
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
-                app:layout_behavior=".coordinatorlayout.behavior.ImgHeaderBehavior"
+                app:layout_behavior=".module.coordinatorlayout.behavior.ImgHeaderBehavior"
                 android:background="@android:color/darker_gray"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -32,7 +32,7 @@
                 android:paddingTop="15dp"
                 app:layout_anchor="@id/head_layout"
                 app:layout_anchorGravity="bottom"
-                app:layout_behavior=".coordinatorlayout.behavior.ScrollViewBehavior">
+                app:layout_behavior=".module.coordinatorlayout.behavior.ScrollViewBehavior">
 
             <LinearLayout
                     android:layout_width="match_parent"

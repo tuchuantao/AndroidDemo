@@ -1,4 +1,4 @@
-package com.kevin.demo.banner.base
+package com.kevin.demo.module.banner.base
 
 import androidx.viewpager.widget.PagerAdapter
 

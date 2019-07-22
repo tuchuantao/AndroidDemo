@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".coordinatorlayout.CoordinatorLayoutActivity">
+        <activity android:name="com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
@@ -29,7 +29,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".banner.BannerActivity">
+        <activity android:name="com.kevin.demo.module.banner.BannerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.kevin.demo.module.surfaceview.SurfaceViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 

@@ -1,10 +1,11 @@
-package com.kevin.demo.banner
+package com.kevin.demo.module.banner
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
-import com.kevin.demo.banner.base.BannerIndicatorView
+import com.kevin.demo.module.banner.base.BannerIndicatorView
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityBannerLayoutBinding
 
@@ -17,7 +18,7 @@ class BannerActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityBannerLayoutBinding.inflate(LayoutInflater.from(this))
+        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_banner_layout, null, false)
         setContentView(binding.root)
 
         initView()

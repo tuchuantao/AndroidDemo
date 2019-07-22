@@ -1,4 +1,4 @@
-package com.kevin.demo.banner.base
+package com.kevin.demo.module.banner.base
 
 /**
  * Create by Kevin-Tu on 2019/3/12.

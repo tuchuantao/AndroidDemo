@@ -1,4 +1,4 @@
-package com.kevin.demo.banner.base
+package com.kevin.demo.module.banner.base
 
 import android.content.Context
 import android.content.res.TypedArray

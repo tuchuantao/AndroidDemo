@@ -32,6 +32,15 @@
                     android:textAllCaps="false"
                     android:textSize="20sp"
                     android:layout_marginTop="20dp"/>
+
+            <Button
+                    android:id="@+id/btn_surface_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="SurfaceView"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"/>
         </LinearLayout>
     </ScrollView>
 </layout>

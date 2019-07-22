@@ -1,7 +1,9 @@
-package com.kevin.demo.coordinatorlayout
+package com.kevin.demo.module.coordinatorlayout
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.databinding.DataBindingUtil
+import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityCoordinatorLayoutBinding
 import com.kevin.demo.util.ScreenUtil
@@ -15,7 +17,7 @@ class CoordinatorLayoutActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCoordinatorLayoutBinding.inflate(LayoutInflater.from(this))
+        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_coordinator_layout, null, false)
         setContentView(binding.root)
 
         initView()
