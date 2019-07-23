@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.SurfaceHolder
 import android.view.SurfaceView
+import kotlin.concurrent.thread
 
 /**
  * Create by Kevin-Tu on 2019/7/22.
@@ -20,7 +21,8 @@ class PainterView : SurfaceView, SurfaceHolder.Callback, Runnable {
     private lateinit var path: Path
     private var lastX: Float = 0F
     private var lastY: Float = 0F
-    private var isDrawing = false
+    @Volatile private var isDrawing = false
+    @Volatile private var needDrawing = false
 
     @JvmOverloads
     constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : super(
@@ -48,26 +50,34 @@ class PainterView : SurfaceView, SurfaceHolder.Callback, Runnable {
         path = Path()
     }
 
-    override fun surfaceChanged(holder: SurfaceHolder?, format: Int, width: Int, height: Int) {
+    override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
     }
 
-    override fun surfaceDestroyed(holder: SurfaceHolder?) {
+    override fun surfaceDestroyed(holder: SurfaceHolder) {
         isDrawing = false
+        holder.removeCallback(this)
     }
 
-    override fun surfaceCreated(holder: SurfaceHolder?) {
-        isDrawing = true
-        Thread(this).start()
+    override fun surfaceCreated(holder: SurfaceHolder) {
+        // 绘制白色背景
+        drawing()
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         var eventX = event.x
         var eventY = event.y
-        when(event.action) {
+        when (event.action) {
             MotionEvent.ACTION_DOWN -> {
+                isDrawing = true
+                thread(start = true) {
+
+                }
+                Thread(this).start()
+
                 lastX = eventX
                 lastY = eventY
                 path.moveTo(lastX, lastY)
+                needDrawing = true
             }
             MotionEvent.ACTION_MOVE -> {
                 var distanceX = Math.abs(eventX - lastX)
@@ -77,8 +87,10 @@ class PainterView : SurfaceView, SurfaceHolder.Callback, Runnable {
                     lastX = eventX
                     lastY = eventY
                 }
+                needDrawing = true
             }
             MotionEvent.ACTION_UP -> {
+                isDrawing = false
             }
         }
 
@@ -87,26 +99,21 @@ class PainterView : SurfaceView, SurfaceHolder.Callback, Runnable {
 
     override fun run() {
         while (isDrawing) {
-            drawing()
+            if (needDrawing) { // 避免无效绘制，绘制相同的内容
+                drawing()
+            }
         }
-    }
-
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        var wSpecMode = MeasureSpec.getMode(widthMeasureSpec)
-        var wSpecSize = MeasureSpec.getSize(widthMeasureSpec)
-        var hSpecMode = MeasureSpec.getMode(heightMeasureSpec)
-        var hSpecSize = MeasureSpec.getSize(heightMeasureSpec)
     }
 
     private fun drawing() {
         try {
-            canvas = holder.lockCanvas()
+            canvas = holder.lockCanvas() // lockCanvas()获取到的Canvas对象还是上次的Canvas对象，并不是一个新的对象。之前的绘图都将被保留
             canvas.drawColor(Color.WHITE)
             canvas.drawPath(path, paint)
         } finally {
-
+            if (canvas != null) {
+                holder.unlockCanvasAndPost(canvas) // 进行画布内容的提交
+            }
         }
     }
-
 }

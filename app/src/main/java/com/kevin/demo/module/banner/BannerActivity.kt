@@ -12,19 +12,13 @@ import com.kevin.demo.databinding.ActivityBannerLayoutBinding
 /**
  * Create by Kevin-Tu on 2019/6/11.
  */
-class BannerActivity : BaseActivity() {
+class BannerActivity : BaseActivity<ActivityBannerLayoutBinding>() {
 
-    private lateinit var binding: ActivityBannerLayoutBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initBinding() {
         binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_banner_layout, null, false)
-        setContentView(binding.root)
-
-        initView()
     }
 
-    private fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
         title = "BannerLayout"
 
         var bannerData = ArrayList<String>()

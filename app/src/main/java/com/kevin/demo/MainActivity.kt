@@ -10,19 +10,13 @@ import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    private lateinit var binding: ActivityMainBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initBinding() {
         binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false)
-        setContentView(binding.root)
-
-        initView()
     }
 
-    private fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
         binding.btnCoordinatorLayout.setOnClickListener {
             var intent = Intent(this, CoordinatorLayoutActivity::class.java)
             startActivity(intent)

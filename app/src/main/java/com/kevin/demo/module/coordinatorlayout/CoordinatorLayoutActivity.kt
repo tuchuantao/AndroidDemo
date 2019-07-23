@@ -11,19 +11,13 @@ import com.kevin.demo.util.ScreenUtil
 /**
  * Create by Kevin-Tu on 2019/5/30.
  */
-class CoordinatorLayoutActivity : BaseActivity() {
+class CoordinatorLayoutActivity : BaseActivity<ActivityCoordinatorLayoutBinding>() {
 
-    private lateinit var binding: ActivityCoordinatorLayoutBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun initBinding() {
         binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_coordinator_layout, null, false)
-        setContentView(binding.root)
-
-        initView()
     }
 
-    private fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
         title = "CoordinatorLayoutActivity"
 
         val maxHeight = (ScreenUtil.getScreenWidth(this) * 1.01).toInt()
