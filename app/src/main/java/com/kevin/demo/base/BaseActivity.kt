@@ -1,10 +1,29 @@
 package com.kevin.demo.base
 
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ViewDataBinding
 
 
 /**
  * Create by Kevin-Tu on 2019/5/30.
  */
-open class BaseActivity: AppCompatActivity() {
+open abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
+
+    protected lateinit var binding: T
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        initBinding()
+
+        if (binding != null) {
+            setContentView(binding.root)
+        }
+
+        initView(savedInstanceState)
+    }
+
+    abstract fun initBinding()
+
+    abstract fun initView(savedInstanceState: Bundle?)
 }
