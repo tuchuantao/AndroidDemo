@@ -8,12 +8,13 @@ import com.kevin.demo.module.banner.BannerActivity
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
+import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun initBinding() {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false)
+    override fun initBinding(): ActivityMainBinding {
+        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -29,6 +30,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnSurfaceView.setOnClickListener {
             var intent = Intent(this, SurfaceViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnAidl.setOnClickListener {
+            var intent = Intent(this, AidlActivity::class.java)
             startActivity(intent)
         }
     }

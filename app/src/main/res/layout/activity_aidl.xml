@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@android:color/white">
+
+        <Button
+                android:id="@+id/btn_bind"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="First Bind Service"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_marginTop="30dp"/>
+
+        <TextView
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="输出结果"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20dp"/>
+
+        <Button
+                android:id="@+id/btn_ipc"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="IPC"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+        <TextView
+                android:id="@+id/result_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="输出获取传递的User信息"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="30dp"/>
+
+        <Button
+                android:id="@+id/btn_send"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Send User"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+        <Button
+                android:id="@+id/btn_get"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Get User"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp"/>
+
+    </LinearLayout>
+</layout>

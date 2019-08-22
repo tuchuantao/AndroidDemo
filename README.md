@@ -16,3 +16,7 @@ SurfaceView实现画板<br/>
 <img src="./img/SurfaceView.png" width=270 height=480><br/>
 [快速跳转链接](https://github.com/tuchuantao/AndroidDemo/tree/master/app/src/main/java/com/kevin/demo/module/surfaceview) <br/>
 [前辈的轮子](https://www.jianshu.com/p/afe23814b207)<br/>
+
+### 4、AIDL
+[server端](https://github.com/tuchuantao/AndroidDemo/tree/master/aidlserver/src/main/java/com/kevin/aidlserver/) <br/>
+[client端](https://github.com/tuchuantao/AndroidDemo/tree/master/app/src/main/java/com/kevin/demo/module/aidl) <br/>

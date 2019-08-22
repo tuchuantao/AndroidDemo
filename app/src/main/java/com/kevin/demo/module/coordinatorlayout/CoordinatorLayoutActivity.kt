@@ -13,8 +13,8 @@ import com.kevin.demo.util.ScreenUtil
  */
 class CoordinatorLayoutActivity : BaseActivity<ActivityCoordinatorLayoutBinding>() {
 
-    override fun initBinding() {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_coordinator_layout, null, false)
+    override fun initBinding(): ActivityCoordinatorLayoutBinding {
+        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_coordinator_layout, null, false)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

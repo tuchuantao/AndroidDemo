@@ -13,8 +13,8 @@ import com.kevin.demo.databinding.ActivitySurfaveViewBinding
 class SurfaceViewActivity : BaseActivity<ActivitySurfaveViewBinding>() {
 
 
-    override fun initBinding() {
-        binding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_surfave_view, null, false)
+    override fun initBinding(): ActivitySurfaveViewBinding {
+        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_surfave_view, null, false)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

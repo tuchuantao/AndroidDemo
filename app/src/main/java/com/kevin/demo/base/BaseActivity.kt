@@ -14,7 +14,7 @@ open abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initBinding()
+        binding = initBinding()
 
         if (binding != null) {
             setContentView(binding.root)
@@ -23,7 +23,7 @@ open abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
         initView(savedInstanceState)
     }
 
-    abstract fun initBinding()
+    abstract fun initBinding(): T
 
     abstract fun initView(savedInstanceState: Bundle?)
 }
