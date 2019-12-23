@@ -9,7 +9,9 @@ import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.aidl.AidlActivity
+import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
+import com.kevin.demo.work.WorkHelper
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -37,5 +39,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             var intent = Intent(this, AidlActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnNotification.setOnClickListener {
+            var intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        WorkHelper.startWorker(this)
     }
 }
