@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityNotificationBinding
+import java.lang.Exception
 
 /**
  * Create by Kevin-Tu on 2019/12/20.
@@ -47,17 +48,81 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
             notifications?.let {
                 notifications.forEach {
                     it
-                    Log.v("kevin", "it: $it")
+                    Log.v("kevintu", "it: $it")
+                    var notify = it.notification
+                    var view = notify.contentView
                 }
             }
 
             if (notifications?.isNotEmpty() == true) {
                 var status = notifications[notifications.size - 1]
-                Log.v("kevin", "status: $status")
+                Log.v("kevintu", "status: $status")
+                Log.v("kevintu", "status.id: ${status.id}")
                 manager.notify(status.id, status.notification)
             }
         } else {
         }
+        var cla = manager::class.java
+        /*try {
+            var methods = cla.getDeclaredMethod("getService")
+            if (methods != null) {
+                var service =  methods.invoke(manager)
+                var serCla = service::class.java
+                var serMethods = serCla.declaredMethods
+                if (serMethods != null) {
+                    serMethods.forEach {
+                        it.name
+                    }
+                }
+                var serFields = serCla.declaredFields
+                if (serFields != null) {
+                    serFields.forEach {
+                        it.name
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }*/
+
+        /*
+        *
+        try {
+                    Method method = cla.getDeclaredMethod("getService");
+                    if (method != null) {
+                        Object service =  method.invoke(manager);
+                        Class serCla = service.getClass();
+                        Method serMethod = serCla.getDeclaredMethod("getActiveNotifications", String.class);
+                        if (serMethod != null) {
+                            StatusBarNotification[] notifications = (StatusBarNotification[]) serMethod.invoke(service, "com.xiaomi.xmsf");
+                            if (notifications != null) {
+                                for (int i = 0; i < notifications.length; i++) {
+                                    int id = notifications[i].getId();
+                                    String tag = notifications[i].getTag();
+                                }
+                            }
+                            StatusBarNotification[] notifications2 = (StatusBarNotification[]) serMethod.invoke(service, "com.kevin.demo");
+                            if (notifications2 != null) {
+                                for (int i = 0; i < notifications2.length; i++) {
+                                    int id = notifications2[i].getId();
+                                    String tag = notifications2[i].getTag();
+                                }
+                            }
+                            StatusBarNotification[] notifications3 = (StatusBarNotification[]) serMethod.invoke(service, "com.miui.video");
+                            if (notifications3 != null) {
+                                for (int i = 0; i < notifications3.length; i++) {
+                                    int id = notifications3[i].getId();
+                                    String tag = notifications3[i].getTag();
+                                }
+                            }
+                        }
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+        * */
+
     }
 
     private fun showNotification() {

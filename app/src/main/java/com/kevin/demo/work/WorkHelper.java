@@ -22,6 +22,7 @@ public class WorkHelper {
         // 约束
         Constraints constraints = new Constraints.Builder()
                 .setRequiredNetworkType(NetworkType.CONNECTED)
+                //.setRequiresDeviceIdle(true)
                 .build();
 
         // 参数，键值对的形式

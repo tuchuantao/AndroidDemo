@@ -11,6 +11,7 @@ import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
+import com.kevin.demo.module.tablayout.TabLayoutActivity
 import com.kevin.demo.work.WorkHelper
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -42,6 +43,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnNotification.setOnClickListener {
             var intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnTabLayout.setOnClickListener {
+            var intent = Intent(this, TabLayoutActivity::class.java)
             startActivity(intent)
         }
 

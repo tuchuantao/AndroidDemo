@@ -61,5 +61,13 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.kevin.demo.module.tablayout.TabLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

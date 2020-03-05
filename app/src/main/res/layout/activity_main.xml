@@ -59,6 +59,15 @@
                     android:textSize="20sp"
                     android:layout_marginTop="20dp"/>
 
+            <Button
+                    android:id="@+id/btn_tab_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="TabLayout"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"/>
+
         </LinearLayout>
     </ScrollView>
 </layout>
