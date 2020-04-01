@@ -1,5 +1,6 @@
 package com.kevin.demo.module.notification
 
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -130,7 +131,7 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
             .setContentTitle("通知标题 ID=$notificationId")
             .setContentText("通知内容")
             .setWhen(System.currentTimeMillis())
-            .setSmallIcon(R.mipmap.icon_rounded)
+            .setSmallIcon(R.mipmap.icon_rounded) // 必须添加（Android 8.0）
             .setLargeIcon(BitmapFactory.decodeResource(resources, R.mipmap.icon_rounded))
             .setAutoCancel(true) // 点击后自动消失
             //.setContentIntent(Intent())   // PendingIntent进行通知点击跳转功能
@@ -152,6 +153,15 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
              */
             .build()
 
+        // android9.0 添加NotificationChannel
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            var channel = NotificationChannel(
+                "AndroidDemo",
+                "会话消息",
+                NotificationManager.IMPORTANCE_DEFAULT
+            )
+            manager.createNotificationChannel(channel);
+        }
         manager.notify(notificationId, notification)
         notificationId++
     }
