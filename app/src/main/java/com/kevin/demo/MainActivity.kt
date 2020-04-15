@@ -12,6 +12,7 @@ import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
+import com.kevin.demo.module.tint.DrawableTintActivity
 import com.kevin.demo.work.WorkHelper
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -48,6 +49,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnTabLayout.setOnClickListener {
             var intent = Intent(this, TabLayoutActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDrawableTint.setOnClickListener {
+            var intent = Intent(this, DrawableTintActivity::class.java)
             startActivity(intent)
         }
 
