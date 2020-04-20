@@ -72,5 +72,21 @@
 
         <activity android:name="com.kevin.demo.module.tint.DrawableTintActivity"/>
 
+        <activity android:name=".module.service.ServiceActivity"/>
+
+        <service android:name=".module.service.TestService">
+            <intent-filter>
+                <action android:name="com.kevin.service.TEST_SERVICE"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".module.service.TestService2"/>
+
+        <receiver android:name=".module.service.TestBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.kevin.receiver.TEST_SERVICE"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 </manifest>

@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
 import com.kevin.aidlserver.IMyAidlInterface
@@ -65,10 +66,33 @@ class AidlActivity: BaseActivity<ActivityAidlBinding>() {
     }
 
     private fun bindService() {
-        var intent = Intent()
+        var intent = Intent("com.kevin.aidlserver.AidlService")
+        var component = resolveService(this, intent)
+        component?.let {
+            intent.component = component
+
+        }
+        /*var intent = Intent();
         // Android 5.0开始，启动服务必须使用显示的，不能用隐式的
-        intent.component = ComponentName("com.kevin.aidlserver", "com.kevin.aidlserver.AidlService")
+        intent.component = ComponentName("com.kevin.aidlserver", "com.kevin.aidlserver.AidlService")*/
         bindService(intent, connection, Context.BIND_AUTO_CREATE)
+    }
+
+    private fun resolveService(context: Context, intent: Intent): ComponentName? {
+        try {
+            val pm = context.applicationContext.packageManager
+            val resolveInfo = pm.resolveService(intent, 0)
+            if (resolveInfo != null) {
+                val serviceName = resolveInfo.serviceInfo.name
+                val packageName = resolveInfo.serviceInfo.packageName
+                Log.d("resolveService", "servicename: $serviceName, pkgname: $packageName")
+                return ComponentName(packageName, serviceName)
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+        return null
     }
 
     override fun onDestroy() {

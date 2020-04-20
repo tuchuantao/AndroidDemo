@@ -10,6 +10,7 @@ import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.notification.NotificationActivity
+import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
 import com.kevin.demo.module.tint.DrawableTintActivity
@@ -57,6 +58,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             startActivity(intent)
         }
 
+        binding.btnService.setOnClickListener {
+            var intent = Intent(this, ServiceActivity::class.java)
+            startActivity(intent)
+        }
 
         WorkHelper.startWorker(this)
     }
