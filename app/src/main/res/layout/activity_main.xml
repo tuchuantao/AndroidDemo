@@ -86,6 +86,16 @@
                     android:textSize="20sp"
                     android:layout_marginTop="20dp"/>
 
+            <Button
+                    android:id="@+id/btn_task_affinity"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Affinity"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"/>
+
+
         </LinearLayout>
     </ScrollView>
 </layout>

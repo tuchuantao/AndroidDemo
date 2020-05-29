@@ -74,6 +74,19 @@
 
         <activity android:name=".module.service.ServiceActivity"/>
 
+        <activity android:name=".module.affinity.ActAffinityActivity"/>
+        <activity android:name=".module.affinity.StandardActivity"
+                android:launchMode="standard"/>
+        <activity android:name=".module.affinity.SingleTopActivity"
+                android:launchMode="singleTop"/>
+        <activity android:name=".module.affinity.SingleTaskActivity"
+                android:launchMode="singleTask"/>
+        <activity android:name=".module.affinity.SingleInstanceActivity"
+                android:launchMode="singleInstance" />
+        <activity android:name=".module.affinity.SingleInstanceTwoActivity"
+                android:launchMode="singleInstance"
+                android:taskAffinity="com.taskaffinity"/>
+
         <service android:name=".module.service.TestService">
             <intent-filter>
                 <action android:name="com.kevin.service.TEST_SERVICE"/>
