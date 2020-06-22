@@ -1,7 +1,9 @@
 package com.kevin.demo
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import androidx.databinding.DataBindingUtil
 import com.kevin.demo.module.banner.BannerActivity
@@ -21,6 +23,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initBinding(): ActivityMainBinding {
         return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false)
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        updateFontScale(1.3f)
+        super.onCreate(savedInstanceState)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
@@ -70,5 +77,24 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
         //WorkHelper.startWorker(this)
+    }
+
+    /**
+     * 通过更改scaledDensity来更改文字的大小，只对SP有用
+     */
+    private fun updateFontScale(scale: Float = 1f) {
+        var configuration = resources.configuration
+        configuration.fontScale = scale
+
+        var metrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(metrics)
+        metrics.scaledDensity = configuration.fontScale * metrics.density
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            baseContext.resources.displayMetrics.scaledDensity = metrics.scaledDensity
+            baseContext.createConfigurationContext(configuration)
+        } else {
+            baseContext.resources.updateConfiguration(configuration, metrics)
+        }
     }
 }
