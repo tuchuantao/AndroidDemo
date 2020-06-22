@@ -81,6 +81,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     /**
      * 通过更改scaledDensity来更改文字的大小，只对SP有用
+     *
+     * 0.85 小, 1 标准大小, 1.15 大，1.3 超大 ，1.45 特大
      */
     private fun updateFontScale(scale: Float = 1f) {
         var configuration = resources.configuration
