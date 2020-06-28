@@ -87,6 +87,8 @@
                 android:launchMode="singleInstance"
                 android:taskAffinity="com.taskaffinity"/>
 
+        <activity android:name=".module.fadingedge.FadingEdgeActivity"/>
+
         <service android:name=".module.service.TestService">
             <intent-filter>
                 <action android:name="com.kevin.service.TEST_SERVICE"/>
