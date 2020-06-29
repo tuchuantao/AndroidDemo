@@ -104,6 +104,15 @@
                     android:textSize="20sp"
                     android:layout_marginTop="20dp"/>
 
+            <Button
+                    android:id="@+id/btn_data_binding"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Data Binding"
+                    android:textAllCaps="false"
+                    android:textSize="20sp"
+                    android:layout_marginTop="20dp"/>
+
         </LinearLayout>
     </ScrollView>
 </layout>

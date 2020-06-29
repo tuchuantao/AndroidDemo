@@ -89,6 +89,8 @@
 
         <activity android:name=".module.fadingedge.FadingEdgeActivity"/>
 
+        <activity android:name=".module.databinding.DataBindingActivity"/>
+
         <service android:name=".module.service.TestService">
             <intent-filter>
                 <action android:name="com.kevin.service.TEST_SERVICE"/>

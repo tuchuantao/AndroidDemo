@@ -12,6 +12,7 @@ import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.affinity.ActAffinityActivity
 import com.kevin.demo.module.aidl.AidlActivity
+import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.service.ServiceActivity
@@ -79,6 +80,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnFadingEdge.setOnClickListener {
             var intent = Intent(this, FadingEdgeActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnDataBinding.setOnClickListener {
+            var intent = Intent(this, DataBindingActivity::class.java)
             startActivity(intent)
         }
 

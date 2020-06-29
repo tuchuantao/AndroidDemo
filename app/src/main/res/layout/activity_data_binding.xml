@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.kevin.demo.data.Person" />
+
+        <variable
+                name="person"
+                type="Person" />
+
+        <variable
+                name="person2"
+                type="Person" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp"
+                android:text="@{@string/name(person.name)}"
+                tools:text="name"
+                app:layout_constraintBottom_toTopOf="@+id/name2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/age"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <TextView
+                android:id="@+id/age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:text="@{@string/age(person.age)}"
+                tools:text="age"
+                app:layout_constraintBottom_toBottomOf="@+id/name"
+                app:layout_constraintLeft_toRightOf="@+id/name"
+                app:layout_constraintRight_toLeftOf="@+id/sex"
+                app:layout_constraintTop_toTopOf="@+id/name" />
+
+        <TextView
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                tools:text="sex"
+                app:sex="@{person.sex}"
+                app:layout_constraintBottom_toBottomOf="@+id/name"
+                app:layout_constraintLeft_toRightOf="@+id/age"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/name" />
+
+        <TextView
+                android:id="@+id/name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:text="@{@string/name(person2.name)}"
+                tools:text="name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/age2"
+                app:layout_constraintHorizontal_chainStyle="packed"/>
+
+        <TextView
+                android:id="@+id/age2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                android:text="@{@string/age(person2.age)}"
+                tools:text="age"
+                app:layout_constraintBottom_toBottomOf="@+id/name2"
+                app:layout_constraintLeft_toRightOf="@+id/name2"
+                app:layout_constraintRight_toLeftOf="@+id/sex2"
+                app:layout_constraintTop_toTopOf="@+id/name2" />
+
+        <TextView
+                android:id="@+id/sex2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_red_light"
+                android:layout_marginLeft="15dp"
+                android:textSize="18sp"
+                tools:text="sex"
+                app:sex="@{person2.sex}"
+                app:layout_constraintBottom_toBottomOf="@+id/name2"
+                app:layout_constraintLeft_toRightOf="@+id/age2"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/name2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
