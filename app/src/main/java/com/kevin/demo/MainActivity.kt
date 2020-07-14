@@ -1,10 +1,12 @@
 package com.kevin.demo
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
+import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import com.kevin.demo.module.banner.BannerActivity
 import com.kevin.demo.base.BaseActivity
@@ -86,6 +88,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.btnDataBinding.setOnClickListener {
             var intent = Intent(this, DataBindingActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnShowDialog.setOnClickListener {
+            var dialog = AlertDialog.Builder(this)
+                .setTitle("Alert Dialog")
+                .create()
+            dialog.show()
         }
 
         //WorkHelper.startWorker(this)
