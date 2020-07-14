@@ -16,6 +16,7 @@ import com.kevin.demo.module.affinity.ActAffinityActivity
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
+import com.kevin.demo.module.lottie.LottieActivity
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
@@ -95,6 +96,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 .setTitle("Alert Dialog")
                 .create()
             dialog.show()
+        }
+
+        binding.btnLottie.setOnClickListener {
+            var intent = Intent(this, LottieActivity::class.java)
+            startActivity(intent)
         }
 
         //WorkHelper.startWorker(this)
