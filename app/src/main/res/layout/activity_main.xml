@@ -2,143 +2,151 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:scrollbars="none">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scrollbars="none">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="60dp">
+
+            <Button
+                android:id="@+id/btn_coordinator_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="10dp"
-                android:paddingBottom="50dp">
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="CoordinatorLayout"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_coordinator_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="CoordinatorLayout"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_banner_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="BannerLayout"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_banner_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="BannerLayout"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_surface_view"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="SurfaceView"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_surface_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="SurfaceView"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_aidl"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="AIDL Activity"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_aidl"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="AIDL Activity"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_notification"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Notification"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_notification"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Notification"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="TabLayout"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_tab_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="TabLayout"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_drawable_tint"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="DrawableTint"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_drawable_tint"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="DrawableTint"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_service"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Service"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Service"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_task_affinity"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Affinity"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_task_affinity"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Affinity"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_fading_edge"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Fading Edge"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_fading_edge"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Fading Edge"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_data_binding"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Data Binding"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_data_binding"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Data Binding"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_show_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Show Dialog"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
-                    android:id="@+id/btn_show_dialog"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Show Dialog"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
-
-            <Button
-                    android:id="@+id/btn_lottie"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:text="Android Lottie"
-                    android:textAllCaps="false"
-                    android:textSize="20sp" />
+                android:id="@+id/btn_lottie"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Android Lottie"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_custom_view"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="Custom View and Xfermode"
                 android:textAllCaps="false"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
+            <Button
+                android:id="@+id/btn_constraint_layout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Constraint Layout"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 </layout>

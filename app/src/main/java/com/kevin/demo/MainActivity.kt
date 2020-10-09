@@ -14,6 +14,7 @@ import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.affinity.ActAffinityActivity
 import com.kevin.demo.module.aidl.AidlActivity
+import com.kevin.demo.module.constraintlayout.ConstraintLayoutActivity
 import com.kevin.demo.module.customview.CustomActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
@@ -106,6 +107,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnCustomView.setOnClickListener {
             var intent = Intent(this, CustomActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnConstraintLayout.setOnClickListener {
+            var intent = Intent(this, ConstraintLayoutActivity::class.java)
             startActivity(intent)
         }
 
