@@ -92,6 +92,7 @@
         <activity android:name=".module.databinding.DataBindingActivity"/>
 
         <activity android:name=".module.lottie.LottieActivity"/>
+        <activity android:name=".module.customview.CustomActivity"/>
 
         <service android:name=".module.service.TestService">
             <intent-filter>
