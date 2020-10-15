@@ -95,7 +95,9 @@
         <activity android:name=".module.customview.CustomActivity"/>
         <activity android:name=".module.constraintlayout.ConstraintLayoutActivity"/>
 
-        <service android:name=".module.service.TestService">
+        <service android:name=".module.service.TestService"
+            android:process=":remote_service"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.kevin.service.TEST_SERVICE"/>
             </intent-filter>
