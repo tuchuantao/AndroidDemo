@@ -147,6 +147,24 @@
                 android:text="Constraint Layout"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_okio"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Okio"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_okhttp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="OKHttp"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 </layout>

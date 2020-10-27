@@ -1,6 +1,5 @@
 package com.kevin.demo
 
-import android.app.Dialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -24,12 +23,11 @@ import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
 import com.kevin.demo.module.tint.DrawableTintActivity
-import com.kevin.demo.work.WorkHelper
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun initBinding(): ActivityMainBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_main
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -114,6 +112,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             var intent = Intent(this, ConstraintLayoutActivity::class.java)
             startActivity(intent)
         }
+
+        /*binding.btnOkio.setOnClickListener {
+            var intent = Intent(this, )
+        }*/
 
         //WorkHelper.startWorker(this)
     }

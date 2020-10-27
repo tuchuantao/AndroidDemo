@@ -16,8 +16,8 @@ import com.kevin.demo.databinding.ActivityTabLayoutBinding
  */
 class TabLayoutActivity : BaseActivity<ActivityTabLayoutBinding>() {
 
-    override fun initBinding(): ActivityTabLayoutBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_tab_layout, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_tab_layout
     }
 
     override fun initView(savedInstanceState: Bundle?) {

@@ -13,8 +13,8 @@ import com.kevin.demo.databinding.ActivityFadingEdgeBinding
  */
 class FadingEdgeActivity : BaseActivity<ActivityFadingEdgeBinding>() {
 
-    override fun initBinding(): ActivityFadingEdgeBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_fading_edge, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_fading_edge
     }
 
     override fun initView(savedInstanceState: Bundle?) {

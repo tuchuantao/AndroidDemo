@@ -17,8 +17,8 @@ import com.kevin.demo.databinding.ActivityDrawableTintBinding
  */
 class DrawableTintActivity: BaseActivity<ActivityDrawableTintBinding>() {
 
-    override fun initBinding(): ActivityDrawableTintBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_drawable_tint, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_drawable_tint
     }
 
     override fun initView(savedInstanceState: Bundle?) {

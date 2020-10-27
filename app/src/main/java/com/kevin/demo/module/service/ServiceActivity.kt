@@ -21,8 +21,8 @@ class ServiceActivity: BaseActivity<ActivityServiceBinding>() {
 
     var connection: ServiceConnection? = null
 
-    override fun initBinding(): ActivityServiceBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_service, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_service
     }
 
     override fun initView(savedInstanceState: Bundle?) {

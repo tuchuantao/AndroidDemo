@@ -13,8 +13,8 @@ import com.kevin.demo.databinding.ActivityDataBindingBinding
  */
 class DataBindingActivity : BaseActivity<ActivityDataBindingBinding>() {
 
-    override fun initBinding(): ActivityDataBindingBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_data_binding, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_data_binding
     }
 
     override fun initView(savedInstanceState: Bundle?) {

@@ -14,8 +14,8 @@ import com.kevin.demo.databinding.ActivityBannerLayoutBinding
  */
 class BannerActivity : BaseActivity<ActivityBannerLayoutBinding>() {
 
-    override fun initBinding(): ActivityBannerLayoutBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_banner_layout, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_banner_layout
     }
 
     override fun initView(savedInstanceState: Bundle?) {

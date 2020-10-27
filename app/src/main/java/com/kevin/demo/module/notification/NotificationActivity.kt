@@ -25,13 +25,8 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
     }
     private var notificationId: Int = 1
 
-    override fun initBinding(): ActivityNotificationBinding {
-        return DataBindingUtil.inflate(
-            LayoutInflater.from(this),
-            R.layout.activity_notification,
-            null,
-            false
-        )
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_notification
     }
 
     override fun initView(savedInstanceState: Bundle?) {

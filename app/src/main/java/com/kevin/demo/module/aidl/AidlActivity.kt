@@ -25,8 +25,8 @@ class AidlActivity: BaseActivity<ActivityAidlBinding>() {
         }
     }
 
-    override fun initBinding(): ActivityAidlBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_aidl, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_aidl
     }
 
     override fun initView(savedInstanceState: Bundle?) {

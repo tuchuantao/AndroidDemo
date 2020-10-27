@@ -24,9 +24,8 @@ import com.kevin.demo.databinding.ActivityWithBtnBinding
  */
 class ActAffinityActivity : BaseActivity<ActivityWithBtnBinding>() {
 
-
-    override fun initBinding(): ActivityWithBtnBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_with_btn, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_with_btn
     }
 
     override fun initView(savedInstanceState: Bundle?) {

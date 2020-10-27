@@ -12,8 +12,8 @@ import com.kevin.demo.databinding.ActivityLottieBinding
  */
 class LottieActivity: BaseActivity<ActivityLottieBinding>() {
 
-    override fun initBinding(): ActivityLottieBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_lottie, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_lottie
     }
 
     override fun initView(savedInstanceState: Bundle?) {

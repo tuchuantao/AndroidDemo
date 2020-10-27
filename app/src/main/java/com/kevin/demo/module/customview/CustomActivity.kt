@@ -9,8 +9,8 @@ import com.kevin.demo.databinding.ActivityCustomViewBinding
 
 class CustomActivity : BaseActivity<ActivityCustomViewBinding>() {
 
-    override fun initBinding(): ActivityCustomViewBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_custom_view, null, false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_custom_view
     }
 
     override fun initView(savedInstanceState: Bundle?) {

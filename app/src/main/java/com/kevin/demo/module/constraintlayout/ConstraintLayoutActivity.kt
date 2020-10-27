@@ -9,8 +9,8 @@ import com.kevin.demo.databinding.ActivityConstraintLayoutBinding
 
 class ConstraintLayoutActivity : BaseActivity<ActivityConstraintLayoutBinding>() {
 
-    override fun initBinding(): ActivityConstraintLayoutBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_constraint_layout, null,false)
+    override fun getLayoutResId(): Int {
+        return R.layout.activity_constraint_layout
     }
 
     override fun initView(savedInstanceState: Bundle?) {
