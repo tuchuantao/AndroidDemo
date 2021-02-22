@@ -7,13 +7,11 @@ import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
+import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
-import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityNotificationBinding
-import java.lang.Exception
 
 /**
  * Create by Kevin-Tu on 2019/12/20.
@@ -34,7 +32,8 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
             showNotification()
         }
         binding.btnGetNotification.setOnClickListener {
-            getNotification()
+//            getNotification()
+            showNotification2()
         }
     }
 
@@ -157,6 +156,27 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
             )
             manager.createNotificationChannel(channel);
         }
+        manager.notify(notificationId, notification)
+        notificationId++
+    }
+
+    private fun showNotification2() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            var channel = NotificationChannel("AndroidDemo2", "AndroidDemo", NotificationManager.IMPORTANCE_DEFAULT)
+            manager.createNotificationChannel(channel)
+        }
+
+        var remoteViews = RemoteViews(getPackageName(), R.layout.vpn_notification_layout);
+        remoteViews.setImageViewResource(R.id.logo_img, R.mipmap.ic_launcher)
+        remoteViews.setTextViewText(R.id.notify_title, "title")
+        remoteViews.setTextViewText(R.id.content_speed, "desc")
+
+        var notification = NotificationCompat.Builder(this, "AndroidDemo2")
+            .setContent(remoteViews)
+            .setSmallIcon(R.mipmap.ic_launcher)
+            .setOngoing(true)
+            .setWhen(System.currentTimeMillis())
+            .build()
         manager.notify(notificationId, notification)
         notificationId++
     }

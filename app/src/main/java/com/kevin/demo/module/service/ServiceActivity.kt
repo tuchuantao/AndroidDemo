@@ -6,8 +6,6 @@ import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
-import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityServiceBinding

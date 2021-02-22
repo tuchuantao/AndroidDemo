@@ -5,20 +5,20 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.kevin.demo.R
 
 
 /**
  * Create by Kevin-Tu on 2019/5/30.
  */
-open abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
+open abstract class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
 
     protected lateinit var binding: T
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = initBinding()
+        option()
 
+        binding = initBinding()
         if (binding != null) {
             setContentView(binding.root)
         }
@@ -26,11 +26,14 @@ open abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
         initView(savedInstanceState)
     }
 
-    fun initBinding(): T {
+    private fun initBinding(): T {
         return DataBindingUtil.inflate(LayoutInflater.from(this), getLayoutResId(), null, false)
     }
 
     abstract fun getLayoutResId(): Int
 
     abstract fun initView(savedInstanceState: Bundle?)
+
+    open fun option() {
+    }
 }

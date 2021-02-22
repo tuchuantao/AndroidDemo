@@ -1,8 +1,6 @@
 package com.kevin.demo.module.tablayout
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.BaseOnTabSelectedListener
 import com.kevin.demo.R

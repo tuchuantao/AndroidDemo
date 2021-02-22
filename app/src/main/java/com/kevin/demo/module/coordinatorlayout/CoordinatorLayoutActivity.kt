@@ -1,8 +1,6 @@
 package com.kevin.demo.module.coordinatorlayout
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityCoordinatorLayoutBinding

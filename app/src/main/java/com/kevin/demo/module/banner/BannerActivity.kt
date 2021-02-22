@@ -2,8 +2,8 @@ package com.kevin.demo.module.banner
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.WindowManager
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.databinding.DataBindingUtil
 import com.kevin.demo.R
 import com.kevin.demo.module.banner.base.BannerIndicatorView
 import com.kevin.demo.base.BaseActivity
@@ -16,6 +16,12 @@ class BannerActivity : BaseActivity<ActivityBannerLayoutBinding>() {
 
     override fun getLayoutResId(): Int {
         return R.layout.activity_banner_layout
+    }
+
+    override fun option() {
+        // 1、禁止截图
+        // 2、最近任务不展示具体内容
+        window.addFlags(WindowManager.LayoutParams.FLAG_SECURE)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

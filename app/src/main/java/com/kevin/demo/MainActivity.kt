@@ -4,21 +4,21 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
-import androidx.databinding.DataBindingUtil
-import com.kevin.demo.module.banner.BannerActivity
 import com.kevin.demo.base.BaseActivity
-import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.databinding.ActivityMainBinding
 import com.kevin.demo.module.affinity.ActAffinityActivity
 import com.kevin.demo.module.aidl.AidlActivity
+import com.kevin.demo.module.animationdra.DrawableAnimActivity
+import com.kevin.demo.module.banner.BannerActivity
 import com.kevin.demo.module.constraintlayout.ConstraintLayoutActivity
+import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.module.customview.CustomActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
 import com.kevin.demo.module.lottie.LottieActivity
 import com.kevin.demo.module.notification.NotificationActivity
+import com.kevin.demo.module.okio.OkioActivity
 import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
@@ -103,6 +103,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             startActivity(intent)
         }
 
+        binding.btnDrawableAnim.setOnClickListener {
+            var intent = Intent(this, DrawableAnimActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnCustomView.setOnClickListener {
             var intent = Intent(this, CustomActivity::class.java)
             startActivity(intent)
@@ -113,9 +118,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             startActivity(intent)
         }
 
-        /*binding.btnOkio.setOnClickListener {
-            var intent = Intent(this, )
-        }*/
+        binding.btnOkio.setOnClickListener {
+            var intent = Intent(this, OkioActivity::class.java)
+            startActivity(intent)
+        }
 
         //WorkHelper.startWorker(this)
     }

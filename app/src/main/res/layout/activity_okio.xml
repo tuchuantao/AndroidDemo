@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/copy_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Copy File:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_io"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Java io"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_nio"
+            app:layout_constraintTop_toBottomOf="@id/copy_title" />
+
+        <Button
+            android:id="@+id/btn_nio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Java nio"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toRightOf="@id/btn_io"
+            app:layout_constraintRight_toLeftOf="@id/btn_okio"
+            app:layout_constraintTop_toTopOf="@id/btn_io" />
+
+        <Button
+            android:id="@+id/btn_okio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Okio"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toRightOf="@id/btn_nio"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_io" />
+
+        <TextView
+            android:id="@+id/socket_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Socket:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_io" />
+
+        <Button
+            android:id="@+id/btn_nio_server"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Server nio"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_nio"
+            app:layout_constraintTop_toBottomOf="@id/socket_title" />
+
+        <Button
+            android:id="@+id/btn_nio_client"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Client nio"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toRightOf="@id/btn_io"
+            app:layout_constraintRight_toLeftOf="@id/btn_okio"
+            app:layout_constraintTop_toTopOf="@id/btn_nio_server" />
+
+        <TextView
+            android:id="@+id/okhttp_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="OKHttp:"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_nio_client" />
+
+        <Button
+            android:id="@+id/btn_execute"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Execute"
+            android:textAllCaps="false"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_nio"
+            app:layout_constraintBottom_toBottomOf="@id/btn_execute_with_thread"
+            app:layout_constraintTop_toTopOf="@id/btn_execute_with_thread" />
+
+        <Button
+            android:id="@+id/btn_execute_with_thread"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Execute in thread"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toRightOf="@id/btn_io"
+            app:layout_constraintRight_toLeftOf="@id/btn_okio"
+            app:layout_constraintTop_toBottomOf="@id/okhttp_title" />
+
+        <Button
+            android:id="@+id/btn_enqueue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="Enqueue"
+            android:textAllCaps="false"
+            app:layout_constraintLeft_toRightOf="@id/btn_nio"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_execute_with_thread"
+            app:layout_constraintBottom_toBottomOf="@id/btn_execute_with_thread"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

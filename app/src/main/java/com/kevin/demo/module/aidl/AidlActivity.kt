@@ -1,8 +1,6 @@
 package com.kevin.demo.module.aidl
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import androidx.databinding.DataBindingUtil
 import com.kevin.aidlserver.IMyAidlInterface
 import com.kevin.aidlserver.User
 import com.kevin.demo.R

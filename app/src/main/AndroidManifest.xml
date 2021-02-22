@@ -30,11 +30,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.kevin.demo.module.banner.BannerActivity">
+        <activity android:name="com.kevin.demo.module.banner.BannerActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="www.kevintu.com"/>
             </intent-filter>
         </activity>
 
@@ -94,6 +103,8 @@
         <activity android:name=".module.lottie.LottieActivity"/>
         <activity android:name=".module.customview.CustomActivity"/>
         <activity android:name=".module.constraintlayout.ConstraintLayoutActivity"/>
+        <activity android:name=".module.okio.OkioActivity"/>
+        <activity android:name=".module.animationdra.DrawableAnimActivity"/>
 
         <service android:name=".module.service.TestService"
             android:process=":remote_service"

@@ -58,9 +58,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation"androidx.work:work-runtime:${versions.androidx.work}"
-    implementation"androidx.work:work-testing:${versions.androidx.work}"
-    implementation"androidx.work:work-runtime-ktx:${versions.androidx.work}"
+    implementation "androidx.work:work-runtime:${versions.androidx.work}"
+    implementation "androidx.work:work-testing:${versions.androidx.work}"
+    implementation "androidx.work:work-runtime-ktx:${versions.androidx.work}"
+
+    // fresco
+    implementation "com.facebook.fresco:fresco:${versions.fresco.fresco}"
+    implementation "com.facebook.fresco:animated-webp:${versions.fresco.webp_anim}"
+    implementation "com.facebook.fresco:webpsupport:${versions.fresco.webp}"
+    implementation "com.facebook.fresco:animated-drawable:${versions.fresco.drawable_anim}"
 
     implementation 'com.android.support:design:28.0.0'
 

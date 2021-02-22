@@ -131,6 +131,15 @@
                 android:textSize="18sp" />
 
             <Button
+                android:id="@+id/btn_drawable_anim"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:text="Frame anim"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
                 android:id="@+id/btn_custom_view"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
@@ -157,14 +166,6 @@
                 android:textAllCaps="false"
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/btn_okhttp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="8dp"
-                android:text="OKHttp"
-                android:textAllCaps="false"
-                android:textSize="18sp" />
         </LinearLayout>
     </ScrollView>
 </layout>
