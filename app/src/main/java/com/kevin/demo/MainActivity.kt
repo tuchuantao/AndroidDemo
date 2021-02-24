@@ -4,6 +4,9 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.widget.Toast
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityMainBinding
@@ -17,6 +20,7 @@ import com.kevin.demo.module.customview.CustomActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
 import com.kevin.demo.module.lottie.LottieActivity
+import com.kevin.demo.module.newactivityresult.MyActivityResultContract
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.okio.OkioActivity
 import com.kevin.demo.module.service.ServiceActivity
@@ -121,6 +125,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.btnOkio.setOnClickListener {
             var intent = Intent(this, OkioActivity::class.java)
             startActivity(intent)
+        }
+
+        // 正式环境可以抽出一个工具类
+        var myActivityLauncher = registerForActivityResult(MyActivityResultContract(), ActivityResultCallback {
+            Toast.makeText(this, "结果为：$it", Toast.LENGTH_LONG).show()
+        })
+        var takePicture = registerForActivityResult(ActivityResultContracts.TakePicturePreview(), ActivityResultCallback {
+
+        })
+        binding.btnNewActResult.setOnClickListener {
+//            myActivityLauncher.launch("Hello World !!")
+            takePicture.launch(null)
         }
 
         //WorkHelper.startWorker(this)

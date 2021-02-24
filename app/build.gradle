@@ -80,4 +80,8 @@ dependencies {
 
     // lottie
     implementation "com.airbnb.android:lottie:${versions.lottileVersion}"
+
+    // new Activity Result API
+    implementation "androidx.activity:activity:${versions.androidx.activity}"
+    implementation "androidx.fragment:fragment:${versions.androidx.fragment}"
 }
