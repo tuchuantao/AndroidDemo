@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="8dp"
+        android:paddingBottom="60dp">
+
+        <Button
+            android:id="@+id/btn_create_db"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Create DB"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_insert"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Insert"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_query"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Query"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_query_last"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Get last Student"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Update"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="4dp"
+            android:text="Delete"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:gravity="left"/>
+
+    </LinearLayout>
+</layout>
