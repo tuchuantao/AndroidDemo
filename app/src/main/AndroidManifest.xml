@@ -114,6 +114,8 @@
         <activity android:name=".module.okio.OkioActivity" />
         <activity android:name=".module.animationdra.DrawableAnimActivity" />
         <activity android:name=".module.db.DBActivity" />
+        <activity android:name=".module.handler.HandlerActivity" />
+        <activity android:name=".module.fps.FpsMonitorActivity" />
 
         <service
             android:name=".module.service.TestService"

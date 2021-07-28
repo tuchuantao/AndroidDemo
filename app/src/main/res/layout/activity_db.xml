@@ -6,13 +6,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingTop="8dp"
-        android:paddingBottom="60dp">
+        android:paddingBottom="30dp">
 
         <Button
             android:id="@+id/btn_create_db"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Create DB"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -20,8 +20,8 @@
         <Button
             android:id="@+id/btn_insert"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Insert"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -29,8 +29,8 @@
         <Button
             android:id="@+id/btn_query"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Query"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -38,8 +38,8 @@
         <Button
             android:id="@+id/btn_query_last"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Get last Student"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -47,8 +47,8 @@
         <Button
             android:id="@+id/btn_update"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Update"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -56,8 +56,8 @@
         <Button
             android:id="@+id/btn_delete"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="2dp"
             android:text="Delete"
             android:textAllCaps="false"
             android:textSize="18sp" />
@@ -66,12 +66,13 @@
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:gravity="left"/>
+            android:fadingEdgeLength="30dp"
+            android:requiresFadingEdge="vertical"
+            android:textSize="16sp"/>
 
     </LinearLayout>
 </layout>

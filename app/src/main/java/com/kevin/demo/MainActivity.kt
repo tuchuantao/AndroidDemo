@@ -3,7 +3,10 @@ package com.kevin.demo
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Message
 import android.util.DisplayMetrics
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
@@ -20,6 +23,8 @@ import com.kevin.demo.module.customview.CustomActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.db.DBActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
+import com.kevin.demo.module.fps.FpsMonitorActivity
+import com.kevin.demo.module.handler.HandlerActivity
 import com.kevin.demo.module.lottie.LottieActivity
 import com.kevin.demo.module.newactivityresult.MyActivityResultContract
 import com.kevin.demo.module.notification.NotificationActivity
@@ -41,6 +46,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnFps.setOnClickListener {
+            var intent = Intent(this, FpsMonitorActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnHandler.setOnClickListener {
+            var intent = Intent(this, HandlerActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToast.setOnClickListener {
+//            Toast.makeText(this, "toast", Toast.LENGTH_SHORT).show()
+            // 小米手机Toast会默认带上应用名
+            // 解决方案1
+            var toast = Toast.makeText(this, "", Toast.LENGTH_SHORT)
+            toast.setText("toast")
+            toast.show()
+            // https://mp.weixin.qq.com/s/B3ooLGa-uQK4pf9RrZvY5g
+        }
+
         binding.btnCoordinatorLayout.setOnClickListener {
             var intent = Intent(this, CoordinatorLayoutActivity::class.java)
             startActivity(intent)

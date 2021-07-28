@@ -13,8 +13,6 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import okhttp3.HttpUrl;
-
 /**
  * Created by tuchuantao on 2020/10/27
  */
@@ -35,8 +33,6 @@ public class OkioActivity extends BaseActivity<ActivityOkioBinding> {
             Log.v("kevin", "getPath: " + url.getPath());
             Log.v("kevin", "getProtocol: " + url.getProtocol());
 //            Log.v("kevin", "getContent: " + url.getContent());
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

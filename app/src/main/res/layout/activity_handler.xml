@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello World" />
+
+    <com.kevin.demo.module.handler.MyView
+        android:id="@+id/my_view"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+            <RelativeLayout
+                android:id="@+id/top1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/center1"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/top1">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/center1">
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/center"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/top">
+            <RelativeLayout
+                android:id="@+id/top2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/center2"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_below="@id/top2">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/center2">
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/center">
+
+            <RelativeLayout
+                android:id="@+id/top3"
+                android:layout_width="match_parent"
+                android:layout_height="20dp">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/center3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/top3">
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/center3">
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

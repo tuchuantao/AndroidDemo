@@ -1,6 +1,8 @@
 package com.kevin.demo.base
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -16,6 +18,7 @@ open abstract class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("Lifecycle", this::class.java.simpleName + " onCreate()")
         option()
 
         binding = initBinding()
@@ -35,5 +38,40 @@ open abstract class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
     abstract fun initView(savedInstanceState: Bundle?)
 
     open fun option() {
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("Lifecycle", this::class.java.simpleName + " onStart()")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("Lifecycle", this::class.java.simpleName + " onRestart()")
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        Log.d("Lifecycle", this::class.java.simpleName + " onNewIntent()")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("Lifecycle", this::class.java.simpleName + " onPause()")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("Lifecycle", this::class.java.simpleName + " onStop()")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("Lifecycle", this::class.java.simpleName + " onResume()")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("Lifecycle", this::class.java.simpleName + " onDestroy()")
     }
 }

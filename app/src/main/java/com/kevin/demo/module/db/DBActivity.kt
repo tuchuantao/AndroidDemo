@@ -1,6 +1,7 @@
 package com.kevin.demo.module.db
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityDbBinding
@@ -19,6 +20,7 @@ class DBActivity : BaseActivity<ActivityDbBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.content.movementMethod = ScrollingMovementMethod()
         binding.btnCreateDb.setOnClickListener {
             var openHelper = MySQLiteOpenHelper(this)
             table = openHelper.studentTable
@@ -53,28 +55,34 @@ class DBActivity : BaseActivity<ActivityDbBinding>() {
 
         binding.btnQueryLast.setOnClickListener {
             table?.let {
-                var student = it.getLastStudent();
-                student?.let {stu ->
-                    binding.content.text = "Last item =$stu"
+                var student = it.getLastStudent()
+                if (student == null) {
+                    binding.content.text = "student table is empty !!!"
+                } else {
+                    binding.content.text = "Last item =$student"
                 }
             }
         }
 
         binding.btnUpdate.setOnClickListener {
             table?.let {
-                var student = it.getLastStudent();
-                student?.let { stu ->
-                    stu.name = "李斯"
-                    it.update(stu)
+                var student = it.getLastStudent()
+                if (student == null) {
+                    binding.content.text = "student table is empty !!!"
+                } else {
+                    student.name = "李斯"
+                    it.update(student)
                 }
             }
         }
 
         binding.btnDelete.setOnClickListener {
             table?.let {
-                var student = it.getLastStudent();
-                student?.let { stu ->
-                    it.delete(stu)
+                var student = it.getLastStudent()
+                if (student == null) {
+                    binding.content.text = "student table is empty !!!"
+                } else {
+                    it.delete(student)
                 }
             }
         }
