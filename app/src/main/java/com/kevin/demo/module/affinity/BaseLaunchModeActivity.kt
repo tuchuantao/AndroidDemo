@@ -24,6 +24,9 @@ open class BaseLaunchModeActivity : BaseActivity<ActivityLaunchModeBinding>() {
             startActivity(intent)
         }
         binding.btnStandardWithAffinity.setOnClickListener {
+//            var intent = Intent(this, StandardActivity::class.java)
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//            startActivity(intent)
             var intent = Intent(this, StandardAffinityActivity::class.java)
             startActivity(intent)
         }
