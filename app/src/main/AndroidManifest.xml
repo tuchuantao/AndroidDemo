@@ -86,7 +86,6 @@
 
         <activity android:name=".module.service.ServiceActivity" />
 
-        <activity android:name=".module.affinity.ActAffinityActivity" />
         <activity
             android:name=".module.affinity.StandardActivity"
             android:launchMode="standard" />
@@ -99,8 +98,12 @@
         <activity
             android:name=".module.affinity.SingleInstanceActivity"
             android:launchMode="singleInstance" />
+        <activity android:name=".module.affinity.StandardAffinityActivity"
+            android:taskAffinity="com.standard.affinity"/>
+        <!-- standard 设置taskAffinity 无效 -->
+
         <activity
-            android:name=".module.affinity.SingleInstanceTwoActivity"
+            android:name=".module.affinity.SingleInstanceAffinityActivity"
             android:launchMode="singleInstance"
             android:taskAffinity="com.taskaffinity" />
 

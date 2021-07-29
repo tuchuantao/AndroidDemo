@@ -3,17 +3,14 @@ package com.kevin.demo
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.os.Handler
-import android.os.Message
 import android.util.DisplayMetrics
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityMainBinding
-import com.kevin.demo.module.affinity.ActAffinityActivity
+import com.kevin.demo.module.affinity.StandardActivity
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.animationdra.DrawableAnimActivity
 import com.kevin.demo.module.banner.BannerActivity
@@ -107,7 +104,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
         binding.btnTaskAffinity.setOnClickListener {
-            var intent = Intent(this, ActAffinityActivity::class.java)
+            var intent = Intent(this, StandardActivity::class.java)
             startActivity(intent)
         }
 

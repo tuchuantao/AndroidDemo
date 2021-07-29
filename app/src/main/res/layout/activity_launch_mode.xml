@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_standard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start Standard Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_standard_with_affinity"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start Standard(Affinity) Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+
+        <Button
+            android:id="@+id/btn_single_top"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start SingleTop Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_single_task"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start SingleTask Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_single_instance"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start SingleInstance Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btn_single_instance_with_affinity"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Start SingleInstance(Affinity) Act"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+</layout>
