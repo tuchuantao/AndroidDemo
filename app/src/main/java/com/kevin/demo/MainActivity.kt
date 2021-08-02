@@ -22,6 +22,7 @@ import com.kevin.demo.module.db.DBActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
 import com.kevin.demo.module.fps.FpsMonitorActivity
 import com.kevin.demo.module.handler.HandlerActivity
+import com.kevin.demo.module.inflater.LayoutInflaterActivity
 import com.kevin.demo.module.lottie.LottieActivity
 import com.kevin.demo.module.newactivityresult.MyActivityResultContract
 import com.kevin.demo.module.notification.NotificationActivity
@@ -43,6 +44,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnLayoutInflater.setOnClickListener {
+            var intent = Intent(this, LayoutInflaterActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnFps.setOnClickListener {
             var intent = Intent(this, FpsMonitorActivity::class.java)
             startActivity(intent)

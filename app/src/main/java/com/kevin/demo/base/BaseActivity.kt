@@ -74,4 +74,8 @@ open abstract class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
         super.onDestroy()
         Log.d("Lifecycle", this::class.java.simpleName + " onDestroy()")
     }
+
+    fun log(msg: String) {
+        Log.d(this::class.java.simpleName, msg)
+    }
 }

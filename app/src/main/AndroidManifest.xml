@@ -123,6 +123,7 @@
         <activity android:name=".module.db.DBActivity" />
         <activity android:name=".module.handler.HandlerActivity" />
         <activity android:name=".module.fps.FpsMonitorActivity" />
+        <activity android:name=".module.inflater.LayoutInflaterActivity" />
 
         <service
             android:name=".module.service.TestService"
