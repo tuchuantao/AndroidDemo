@@ -124,6 +124,7 @@
         <activity android:name=".module.handler.HandlerActivity" />
         <activity android:name=".module.fps.FpsMonitorActivity" />
         <activity android:name=".module.inflater.LayoutInflaterActivity" />
+        <activity android:name=".module.touch.TouchEventActivity" />
 
         <service
             android:name=".module.service.TestService"

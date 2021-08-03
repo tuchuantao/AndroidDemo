@@ -14,6 +14,15 @@
             android:paddingBottom="60dp">
 
             <Button
+                android:id="@+id/btn_touch_event"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="TouchEvent"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
                 android:id="@+id/btn_layout_inflater"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"

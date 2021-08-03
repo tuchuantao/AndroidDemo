@@ -31,6 +31,7 @@ import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
 import com.kevin.demo.module.tint.DrawableTintActivity
+import com.kevin.demo.module.touch.TouchEventActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -44,6 +45,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnTouchEvent.setOnClickListener {
+            var intent = Intent(this, TouchEventActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLayoutInflater.setOnClickListener {
             var intent = Intent(this, LayoutInflaterActivity::class.java)
             startActivity(intent)
