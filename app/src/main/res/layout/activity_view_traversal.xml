@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.kevin.demo.module.touch.TouchFatherLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.kevin.demo.module.touch.TouchTextView
+            android:id="@+id/tx1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Text Content"
+            android:background="@android:color/holo_orange_dark"/>
+
+        <com.kevin.demo.module.touch.TouchChildLayout
+            android:id="@+id/child_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <com.kevin.demo.module.touch.TouchTextView
+                android:id="@+id/tx2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Text Content2"
+                android:background="@android:color/holo_blue_bright"/>
+
+            <com.kevin.demo.module.touch.TouchTextView
+                android:id="@+id/tx3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Text Content3"
+                android:layout_marginTop="10dp"
+                android:background="@android:color/darker_gray"/>
+
+        </com.kevin.demo.module.touch.TouchChildLayout>
+
+
+        <com.kevin.demo.module.touch.MyRelativeLayout
+            android:id="@+id/re_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_purple">
+
+            <com.kevin.demo.module.touch.TouchTextView
+                android:id="@+id/tx4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Text Content4"
+                android:background="@android:color/white"/>
+
+            <com.kevin.demo.module.touch.TouchTextView
+                android:id="@+id/tx5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:text="Text Content5"
+                android:layout_marginTop="30dp"
+                android:background="@android:color/darker_gray"/>
+
+        </com.kevin.demo.module.touch.MyRelativeLayout>
+    </com.kevin.demo.module.touch.TouchFatherLayout>
+
+</layout>

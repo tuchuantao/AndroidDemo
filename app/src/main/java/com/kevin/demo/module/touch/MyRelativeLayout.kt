@@ -6,14 +6,15 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 
 /**
  * Created by tuchuantao on 2021/8/3
  * Desc:
  */
-class TouchChildLayout @JvmOverloads constructor(
+class MyRelativeLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : RelativeLayout(context, attrs, defStyleAttr) {
 
 //    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
 //        Log.d(this::class.java.simpleName, "dispatchTouchEvent() event=" + event.action)
@@ -22,16 +23,12 @@ class TouchChildLayout @JvmOverloads constructor(
 //
 //    override fun onInterceptTouchEvent(event: MotionEvent): Boolean {
 //        Log.d(this::class.java.simpleName, "onInterceptTouchEvent() event=" + event.action)
-//        if (event.action == MotionEvent.ACTION_MOVE) { // 触发子View ACTION_CANCEL事件
-//            return true
-//        }
 //        return super.onInterceptTouchEvent(event)
 //    }
 //
 //    override fun onTouchEvent(event: MotionEvent): Boolean {
 //        Log.d(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
-////        return super.onTouchEvent(event)
-//        return true
+//        return super.onTouchEvent(event)
 //    }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -47,10 +44,5 @@ class TouchChildLayout @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         Log.d(this::class.java.simpleName, "onDraw()")
-    }
-
-    override fun draw(canvas: Canvas?) {
-        super.draw(canvas)
-        Log.d(this::class.java.simpleName, "draw()")
     }
 }

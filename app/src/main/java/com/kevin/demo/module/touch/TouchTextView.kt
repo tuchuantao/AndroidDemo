@@ -1,6 +1,7 @@
 package com.kevin.demo.module.touch
 
 import android.content.Context
+import android.graphics.Canvas
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
@@ -32,14 +33,29 @@ class TouchTextView: AppCompatTextView {
 //        }
     }
 
-    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-        Log.e(this::class.java.simpleName, "dispatchTouchEvent() event=" + event.action)
-        return super.dispatchTouchEvent(event)
+//    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
+//        Log.e(this::class.java.simpleName, "dispatchTouchEvent() event=" + event.action)
+//        return super.dispatchTouchEvent(event)
+//    }
+//
+//    override fun onTouchEvent(event: MotionEvent): Boolean {
+//        Log.e(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
+////        return super.onTouchEvent(event)
+//        return true
+//    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        Log.d(this::class.java.simpleName, "onMeasure() text=$text")
     }
 
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        Log.e(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
-//        return super.onTouchEvent(event)
-        return true
+    override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+        super.onLayout(changed, l, t, r, b)
+        Log.d(this::class.java.simpleName, "onLayout() text=$text")
+    }
+
+    override fun onDraw(canvas: Canvas?) {
+        super.onDraw(canvas)
+        Log.d(this::class.java.simpleName, "onDraw() text=$text")
     }
 }
