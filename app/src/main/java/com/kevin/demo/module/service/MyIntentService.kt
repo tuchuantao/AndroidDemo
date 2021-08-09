@@ -1,4 +1,4 @@
-package com.kevin.demo
+package com.kevin.demo.module.service
 
 import android.app.IntentService
 import android.content.Intent
