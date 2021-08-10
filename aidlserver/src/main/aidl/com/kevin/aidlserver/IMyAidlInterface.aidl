@@ -16,5 +16,9 @@ interface IMyAidlInterface {
 
     void inUserInfo(in User user);
 
+    void outUserInfo(out User user);
+
+    void inOutUserInfo(inout User user);
+
     User getUserInfo();
 }

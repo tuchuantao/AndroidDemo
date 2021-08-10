@@ -1,6 +1,7 @@
 package com.kevin.demo.module.aidl
 
 import android.os.Bundle
+import android.util.Log
 import com.kevin.aidlserver.IMyAidlInterface
 import com.kevin.aidlserver.User
 import com.kevin.demo.R
@@ -41,7 +42,9 @@ class AidlActivity: BaseActivity<ActivityAidlBinding>() {
 
         binding.btnSend.setOnClickListener {
             aidlBinder?.let {
-                it.inUserInfo(User(12345, "KevinTu"))
+                var user = User(12345, "KevinTu")
+                it.inUserInfo(user)
+                Log.d("kevin", "AidlActivity send user={$user} name=${user.name}")
             }
         }
 
@@ -51,8 +54,25 @@ class AidlActivity: BaseActivity<ActivityAidlBinding>() {
                 if (user == null) {
                     binding.resultUser.text = "刚传递的User信息为：null"
                 } else {
+                    Log.d("kevin", "AidlActivity get user={$user}")
                     binding.resultUser.text = "刚传递的User信息为：id=${user.id} name=${user.name}"
                 }
+            }
+        }
+
+        binding.btnOut.setOnClickListener {
+            aidlBinder?.let {
+                var user = User(12345, "KevinTu")
+                it.outUserInfo(user)
+                Log.d("kevin", "AidlActivity outUserInfo() user={$user}  userName={${user.name}}")
+            }
+        }
+
+        binding.btnInout.setOnClickListener {
+            aidlBinder?.let {
+                var user = User(12345, "KevinTu")
+                it.inOutUserInfo(user)
+                Log.d("kevin", "AidlActivity inOutUserInfo() user={$user}  userName={${user.name}}")
             }
         }
     }

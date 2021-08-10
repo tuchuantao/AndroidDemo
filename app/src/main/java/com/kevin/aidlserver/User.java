@@ -11,6 +11,9 @@ public class User implements Parcelable {
     private int id;
     private String name;
 
+    public User() {
+    }
+
     public User(int id, String name) {
         this.id = id;
         this.name = name;
@@ -44,10 +47,10 @@ public class User implements Parcelable {
         dest.writeString(name);
     }
 
-/*    public void readFromParcel(Parcel dest) {
+    public void readFromParcel(Parcel dest) {
         id = dest.readInt();
         name = dest.readString();
-    }*/
+    }
 
     public int getId() {
         return id;

@@ -32,6 +32,7 @@ object AidlServiceWrapper {
 
         mServiceConnection = object : ServiceConnection {
             override fun onServiceConnected(name: ComponentName, service: IBinder) {
+                Log.d("kevin", "AidlServiceWrapper onServiceConnected() IBinder=$service")
                 mAidlService = IMyAidlInterface.Stub.asInterface(service)
                 // 注册死亡接收器
                 try {
@@ -108,7 +109,7 @@ object AidlServiceWrapper {
             if (resolveInfo != null) {
                 val serviceName = resolveInfo.serviceInfo.name
                 val packageName = resolveInfo.serviceInfo.packageName
-                Log.d("resolveService", "servicename: $serviceName, pkgname: $packageName")
+                Log.d("kevin", "servicename: $serviceName, pkgname: $packageName")
                 return ComponentName(packageName, serviceName)
             }
         } catch (e: Exception) {

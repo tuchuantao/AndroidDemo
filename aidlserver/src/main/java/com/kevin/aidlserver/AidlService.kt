@@ -28,8 +28,19 @@ class AidlService : Service() {
         }
 
         override fun inUserInfo(user: User) {
+            android.util.Log.v("kevin", "iBinder inUserInfo() user={$user} user.name: ${user.name}")
             this.user = user
-            android.util.Log.v("kevin", "iBinder inUserInfo() user.id: ${user.id} user.name: ${user.name}")
+            user.name = "inUserInfo"
+        }
+
+        override fun outUserInfo(user: User) {
+            android.util.Log.v("kevin", "iBinder outUserInfo() user={$user} user.name: ${user.name}")
+            user.name = "outUserInfo"
+        }
+
+        override fun inOutUserInfo(user: User) {
+            android.util.Log.v("kevin", "iBinder inOutUserInfo() user={$user} user.name: ${user.name}")
+            user.name = "inOutUserInfo"
         }
 
         override fun getUserInfo(): User? {
@@ -38,7 +49,7 @@ class AidlService : Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        android.util.Log.v("kevin", "AidlService onBind()")
+        android.util.Log.v("kevin", "AidlService onBind() IBinder=$iBinder")
         return iBinder
     }
 }
