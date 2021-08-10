@@ -46,6 +46,18 @@ class AidlService : Service() {
         override fun getUserInfo(): User? {
             return user
         }
+
+        override fun testNoOneway(user: User?) {
+            android.util.Log.v("kevin", "iBinder testNoOneway() start")
+            Thread.sleep(2000)
+            android.util.Log.v("kevin", "iBinder testNoOneway() end")
+        }
+
+        override fun testOneway(user: User) {
+            android.util.Log.v("kevin", "iBinder testOneway() start")
+            Thread.sleep(2000)
+            android.util.Log.v("kevin", "iBinder testOneway() end")
+        }
     }
 
     override fun onBind(intent: Intent?): IBinder? {

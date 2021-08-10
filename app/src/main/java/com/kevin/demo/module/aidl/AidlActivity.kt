@@ -75,6 +75,24 @@ class AidlActivity: BaseActivity<ActivityAidlBinding>() {
                 Log.d("kevin", "AidlActivity inOutUserInfo() user={$user}  userName={${user.name}}")
             }
         }
+
+        binding.btnNoOneway.setOnClickListener {
+            aidlBinder?.let {
+                var user = User(12345, "KevinTu")
+                Log.d("kevin", "AidlActivity testNoOneway() start")
+                it.testNoOneway(user)
+                Log.d("kevin", "AidlActivity testNoOneway() end")
+            }
+        }
+
+        binding.btnOneway.setOnClickListener {
+            aidlBinder?.let {
+                var user = User(12345, "KevinTu")
+                Log.d("kevin", "AidlActivity testOneway() start")
+                it.testOneway(user)
+                Log.d("kevin", "AidlActivity testOneway() end")
+            }
+        }
     }
 
     override fun onDestroy() {

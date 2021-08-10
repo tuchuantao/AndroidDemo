@@ -21,4 +21,8 @@ interface IMyAidlInterface {
     void inOutUserInfo(inout User user);
 
     User getUserInfo();
+
+    void testNoOneway(in User user);
+
+    oneway void testOneway(in User user);
 }
