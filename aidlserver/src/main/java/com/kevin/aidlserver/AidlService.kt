@@ -28,18 +28,18 @@ class AidlService : Service() {
         }
 
         override fun inUserInfo(user: User) {
-            android.util.Log.v("kevin", "iBinder inUserInfo() user={$user} user.name: ${user.name}")
+            android.util.Log.v("kevin", "iBinder inUserInfo() user={$user} user.name: ${user.name}  ${Thread.currentThread()}")
             this.user = user
             user.name = "inUserInfo"
         }
 
         override fun outUserInfo(user: User) {
-            android.util.Log.v("kevin", "iBinder outUserInfo() user={$user} user.name: ${user.name}")
+            android.util.Log.v("kevin", "iBinder outUserInfo() user={$user} user.name: ${user.name}  ${Thread.currentThread()}")
             user.name = "outUserInfo"
         }
 
         override fun inOutUserInfo(user: User) {
-            android.util.Log.v("kevin", "iBinder inOutUserInfo() user={$user} user.name: ${user.name}")
+            android.util.Log.v("kevin", "iBinder inOutUserInfo() user={$user} user.name: ${user.name}  ${Thread.currentThread()}")
             user.name = "inOutUserInfo"
         }
 
@@ -48,13 +48,13 @@ class AidlService : Service() {
         }
 
         override fun testNoOneway(user: User?) {
-            android.util.Log.v("kevin", "iBinder testNoOneway() start")
+            android.util.Log.v("kevin", "iBinder testNoOneway() start  ${Thread.currentThread()}")
             Thread.sleep(2000)
             android.util.Log.v("kevin", "iBinder testNoOneway() end")
         }
 
         override fun testOneway(user: User) {
-            android.util.Log.v("kevin", "iBinder testOneway() start")
+            android.util.Log.v("kevin", "iBinder testOneway() start  ${Thread.currentThread()}")
             Thread.sleep(2000)
             android.util.Log.v("kevin", "iBinder testOneway() end")
         }
