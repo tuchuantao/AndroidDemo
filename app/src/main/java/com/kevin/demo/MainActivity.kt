@@ -14,6 +14,7 @@ import com.kevin.demo.module.affinity.StandardActivity
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.animationdra.DrawableAnimActivity
 import com.kevin.demo.module.banner.BannerActivity
+import com.kevin.demo.module.bitmap.BitmapActivity
 import com.kevin.demo.module.constraintlayout.ConstraintLayoutActivity
 import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.module.customview.CustomActivity
@@ -46,6 +47,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnBitmap.setOnClickListener {
+            var intent = Intent(this, BitmapActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnViewTraversal.setOnClickListener {
             var intent = Intent(this, ViewTraversalActivity::class.java)
             startActivity(intent)

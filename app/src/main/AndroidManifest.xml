@@ -126,6 +126,7 @@
         <activity android:name=".module.inflater.LayoutInflaterActivity" />
         <activity android:name=".module.touch.TouchEventActivity" />
         <activity android:name=".module.view.ViewTraversalActivity" />
+        <activity android:name=".module.bitmap.BitmapActivity" />
 
         <service
             android:name=".module.service.TestService"
