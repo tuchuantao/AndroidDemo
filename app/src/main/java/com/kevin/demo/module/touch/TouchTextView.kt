@@ -21,41 +21,41 @@ class TouchTextView: AppCompatTextView {
 
     private fun init() {
 //        parent?.requestDisallowInterceptTouchEvent(true)
-//        setOnTouchListener(object : OnTouchListener {
-//            override fun onTouch(v: View?, event: MotionEvent): Boolean {
-//                Log.d(this::class.java.simpleName, "onTouch() event=" + event.action)
-//                return false
-//            }
-//        })
-//
-//        setOnClickListener {
-//            Log.d(this::class.java.simpleName, "onClick()")
-//        }
+        setOnTouchListener(object : OnTouchListener {
+            override fun onTouch(v: View?, event: MotionEvent): Boolean {
+                Log.d(this::class.java.simpleName, "onTouch() event=" + event.action)
+                return false
+            }
+        })
+
+        setOnClickListener {
+            Log.d(this::class.java.simpleName, "onClick()")
+        }
     }
 
-//    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-//        Log.e(this::class.java.simpleName, "dispatchTouchEvent() event=" + event.action)
-//        return super.dispatchTouchEvent(event)
+    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
+        Log.e(this::class.java.simpleName, "dispatchTouchEvent() event=" + event.action)
+        return super.dispatchTouchEvent(event)
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        Log.e(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
+//        return super.onTouchEvent(event)
+        return true
+    }
+
+//    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+//        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+//        Log.d(this::class.java.simpleName, "onMeasure() text=$text")
 //    }
 //
-//    override fun onTouchEvent(event: MotionEvent): Boolean {
-//        Log.e(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
-////        return super.onTouchEvent(event)
-//        return true
+//    override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
+//        super.onLayout(changed, l, t, r, b)
+//        Log.d(this::class.java.simpleName, "onLayout() text=$text")
 //    }
-
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        Log.d(this::class.java.simpleName, "onMeasure() text=$text")
-    }
-
-    override fun onLayout(changed: Boolean, l: Int, t: Int, r: Int, b: Int) {
-        super.onLayout(changed, l, t, r, b)
-        Log.d(this::class.java.simpleName, "onLayout() text=$text")
-    }
-
-    override fun onDraw(canvas: Canvas?) {
-        super.onDraw(canvas)
-        Log.d(this::class.java.simpleName, "onDraw() text=$text")
-    }
+//
+//    override fun onDraw(canvas: Canvas?) {
+//        super.onDraw(canvas)
+//        Log.d(this::class.java.simpleName, "onDraw() text=$text")
+//    }
 }
