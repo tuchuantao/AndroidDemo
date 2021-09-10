@@ -23,13 +23,18 @@ class TouchTextView: AppCompatTextView {
 //        parent?.requestDisallowInterceptTouchEvent(true)
         setOnTouchListener(object : OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent): Boolean {
-                Log.d(this::class.java.simpleName, "onTouch() event=" + event.action)
+                Log.d(this::class.java.simpleName, "onTouch() action=" + event.action)
                 return false
             }
         })
 
         setOnClickListener {
             Log.d(this::class.java.simpleName, "onClick()")
+        }
+
+        setOnLongClickListener {
+            Log.d(this::class.java.simpleName, "onLongClick()")
+            false
         }
     }
 
@@ -40,8 +45,8 @@ class TouchTextView: AppCompatTextView {
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
         Log.e(this::class.java.simpleName, "onTouchEvent() event=" + event.action)
-//        return super.onTouchEvent(event)
-        return true
+        return super.onTouchEvent(event)
+//        return true
     }
 
 //    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

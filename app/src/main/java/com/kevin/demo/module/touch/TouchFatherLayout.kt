@@ -5,6 +5,8 @@ import android.graphics.Canvas
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
+import android.view.MotionEvent.ACTION_DOWN
+import android.view.MotionEvent.ACTION_MOVE
 import android.widget.LinearLayout
 
 /**
@@ -22,6 +24,9 @@ class TouchFatherLayout @JvmOverloads constructor(
 
     override fun onInterceptTouchEvent(event: MotionEvent): Boolean {
         Log.d(this::class.java.simpleName, "onInterceptTouchEvent() event=" + event.action)
+//        if (event.action == ACTION_MOVE) {
+//            return true
+//        }
         return super.onInterceptTouchEvent(event)
     }
 
