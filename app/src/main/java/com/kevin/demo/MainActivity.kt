@@ -28,6 +28,7 @@ import com.kevin.demo.module.lottie.LottieActivity
 import com.kevin.demo.module.newactivityresult.MyActivityResultContract
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.okio.OkioActivity
+import com.kevin.demo.module.parcelable.ParcelableActivity
 import com.kevin.demo.module.service.ServiceActivity
 import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
@@ -47,6 +48,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnParcel.setOnClickListener {
+            var intent = Intent(this, ParcelableActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnBitmap.setOnClickListener {
             var intent = Intent(this, BitmapActivity::class.java)
             startActivity(intent)
