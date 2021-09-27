@@ -9,6 +9,7 @@ buildscript {
             'lottileVersion'  : '3.4.1',
             'rxjava'          : '3.0.0',
             'multidex_version': '2.0.1',
+            'eventbus'        : '3.2.0',
 
             'androidx'        : [
                     'work'      : '2.1.0',
@@ -21,7 +22,13 @@ buildscript {
                     'webp_anim'    : '1.13.0',
                     'webp'         : '1.13.0',
                     'drawable_anim': '1.13.0'
-            ]
+            ],
+
+            'retrofit'        : [
+                    'retrofit'      : '2.9.0',
+                    'convert_gson'  : '2.9.0',
+                    'adapter_rxjava': '2.9.0',
+            ],
     ]
 
     repositories {

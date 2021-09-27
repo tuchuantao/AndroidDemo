@@ -34,13 +34,13 @@ object AidlServiceWrapper {
             override fun onServiceConnected(name: ComponentName, service: IBinder) {
                 Log.d("kevin", "AidlServiceWrapper onServiceConnected() IBinder=$service")
                 mAidlService = IMyAidlInterface.Stub.asInterface(service)
-                // 注册死亡接收器
-                try {
-                    // 0: 代表普通的RPC, FLAG_ONEWAY 表示一个单向RPC
-                    service.linkToDeath(mDeathRecipient, 0)
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
+//                // 注册死亡接收器
+//                try {
+//                    // 0: 代表普通的RPC, FLAG_ONEWAY 表示一个单向RPC
+//                    service.linkToDeath(mDeathRecipient, 0)
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                }
 
                 synchronized(mListeners) {
                     if (!mListeners.isEmpty()) {

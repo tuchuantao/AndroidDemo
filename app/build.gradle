@@ -84,4 +84,12 @@ dependencies {
     // new Activity Result API
     implementation "androidx.activity:activity:${versions.androidx.activity}"
     implementation "androidx.fragment:fragment:${versions.androidx.fragment}"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:${versions.retrofit.retrofit}"
+    implementation "com.squareup.retrofit2:converter-gson:${versions.retrofit.convert_gson}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${versions.retrofit.adapter_rxjava}"
+
+    // eventbus
+    implementation "org.greenrobot:eventbus:${versions.eventbus}"
 }
