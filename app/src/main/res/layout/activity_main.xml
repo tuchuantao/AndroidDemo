@@ -11,7 +11,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="8dp"
-            android:paddingBottom="60dp">
+            android:paddingBottom="30dp">
 
             <Button
                 android:id="@+id/btn_parcel"
@@ -37,6 +37,15 @@
                 android:layout_height="60dp"
                 android:layout_marginTop="4dp"
                 android:text="ViewTraversal"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_view_measure"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="ViewMeasure"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
 

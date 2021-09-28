@@ -34,6 +34,7 @@ import com.kevin.demo.module.surfaceview.SurfaceViewActivity
 import com.kevin.demo.module.tablayout.TabLayoutActivity
 import com.kevin.demo.module.tint.DrawableTintActivity
 import com.kevin.demo.module.touch.TouchEventActivity
+import com.kevin.demo.module.view.ViewMeasureActivity
 import com.kevin.demo.module.view.ViewTraversalActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -60,6 +61,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         binding.btnViewTraversal.setOnClickListener {
             var intent = Intent(this, ViewTraversalActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnViewMeasure.setOnClickListener {
+            var intent = Intent(this, ViewMeasureActivity::class.java)
             startActivity(intent)
         }
 
