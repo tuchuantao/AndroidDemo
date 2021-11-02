@@ -130,6 +130,7 @@
         <activity android:name=".module.view.ViewMeasureActivity" />
         <activity android:name=".module.bitmap.BitmapActivity" />
         <activity android:name=".module.parcelable.ParcelableActivity" />
+        <activity android:name=".module.screenshoot.ScreenShootActivity" />
 
         <service
             android:name=".module.service.TestService"
