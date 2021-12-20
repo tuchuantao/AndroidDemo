@@ -25,6 +25,7 @@ import com.kevin.demo.module.fps.FpsMonitorActivity
 import com.kevin.demo.module.handler.HandlerActivity
 import com.kevin.demo.module.inflater.LayoutInflaterActivity
 import com.kevin.demo.module.lottie.LottieActivity
+import com.kevin.demo.module.mmkv.MMKVActivity
 import com.kevin.demo.module.newactivityresult.MyActivityResultContract
 import com.kevin.demo.module.notification.NotificationActivity
 import com.kevin.demo.module.okio.OkioActivity
@@ -50,6 +51,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnMmkv.setOnClickListener {
+            var intent = Intent(this, MMKVActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnScreenShoot.setOnClickListener {
             var intent = Intent(this, ScreenShootActivity::class.java)
             startActivity(intent)

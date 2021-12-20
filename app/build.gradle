@@ -92,4 +92,7 @@ dependencies {
 
     // eventbus
     implementation "org.greenrobot:eventbus:${versions.eventbus}"
+
+    // mmkv
+    implementation "com.tencent:mmkv-static:${versions.mmkv}"
 }
