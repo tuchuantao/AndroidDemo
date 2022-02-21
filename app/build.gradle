@@ -31,6 +31,18 @@ android {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
     }
+
+//    packagingOptions {
+//        pickFirst('lib/*/libw.so')
+//        pickFirst('lib/*/libc++_shared.so')
+//        pickFirst('lib/*/libkwsgmain.so')
+//        pickFirst('lib/*/libksse.so')
+//        pickFirst('lib/*/libsmsdk.so')
+//
+//        exclude 'lib/x86/*.so'
+//        exclude 'lib/x86_64/*.so'
+//        exclude 'lib/armeabi/*.so'
+//    }
 }
 
 dependencies {
