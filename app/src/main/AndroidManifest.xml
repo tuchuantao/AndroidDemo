@@ -132,6 +132,7 @@
         <activity android:name=".module.parcelable.ParcelableActivity" />
         <activity android:name=".module.screenshoot.ScreenShootActivity" />
         <activity android:name=".module.mmkv.MMKVActivity"/>
+        <activity android:name=".module.datastore.DataStoreActivity"/>
 
         <service
             android:name=".module.service.TestService"

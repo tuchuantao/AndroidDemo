@@ -3,7 +3,7 @@ package com.kevin.demo.module.mmkv
 import android.os.Bundle
 import com.kevin.demo.R
 import com.kevin.demo.base.BaseActivity
-import com.kevin.demo.databinding.ActivityMmkvBinding
+import com.kevin.demo.databinding.ActivityEmptyBinding
 import com.tencent.mmkv.MMKV
 import java.util.*
 
@@ -13,10 +13,10 @@ import java.util.*
  * Desc: MMKV 是基于 mmap 内存映射的 key-value 组件，底层序列化/反序列化使用 protobuf 实现，性能高，稳定性强。
  * https://github.com/Tencent/MMKV
  */
-class MMKVActivity: BaseActivity<ActivityMmkvBinding>() {
+class MMKVActivity: BaseActivity<ActivityEmptyBinding>() {
 
     override fun getLayoutResId(): Int {
-        return R.layout.activity_mmkv
+        return R.layout.activity_empty
     }
 
     override fun initView(savedInstanceState: Bundle?) {

@@ -19,6 +19,7 @@ import com.kevin.demo.module.constraintlayout.ConstraintLayoutActivity
 import com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity
 import com.kevin.demo.module.customview.CustomActivity
 import com.kevin.demo.module.databinding.DataBindingActivity
+import com.kevin.demo.module.datastore.DataStoreActivity
 import com.kevin.demo.module.db.DBActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
 import com.kevin.demo.module.fps.FpsMonitorActivity
@@ -51,6 +52,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        binding.btnDatastore.setOnClickListener {
+            var intent = Intent(this, DataStoreActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnMmkv.setOnClickListener {
             var intent = Intent(this, MMKVActivity::class.java)
             startActivity(intent)

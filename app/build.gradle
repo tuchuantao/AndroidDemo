@@ -95,4 +95,13 @@ dependencies {
 
     // mmkv
     implementation "com.tencent:mmkv-static:${versions.mmkv}"
+
+    // datastore
+    implementation "androidx.datastore:datastore:${versions.datastore.datastore}"
+    // optional - RxJava3 support
+    implementation "androidx.datastore:datastore-rxjava3:${versions.datastore.datastore_rxjava3}"
+    // Preferences DataStore (SharedPreferences like APIs)
+//    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    // optional - RxJava3 support
+//    implementation("androidx.datastore:datastore-preferences-rxjava3:1.0.0")
 }
