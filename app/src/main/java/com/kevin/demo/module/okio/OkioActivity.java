@@ -49,6 +49,15 @@ public class OkioActivity extends BaseActivity<ActivityOkioBinding> {
             FileUtils.okioCopyFile();
         });
 
+        IOUtils ioUtils = new IOUtils();
+        binding.btnIoServer.setOnClickListener(view -> {
+            ioUtils.startServer();
+        });
+
+        binding.btnIoClient.setOnClickListener(view -> {
+            ioUtils.startClient();
+        });
+
         binding.btnNioServer.setOnClickListener(view -> {
             new LocalServerSocket().startServer();
         });

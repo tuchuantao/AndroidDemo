@@ -60,6 +60,26 @@
             app:layout_constraintTop_toBottomOf="@id/btn_io" />
 
         <Button
+          android:id="@+id/btn_io_server"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:text="Server io"
+          android:textAllCaps="false"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toLeftOf="@id/btn_nio"
+          app:layout_constraintTop_toBottomOf="@id/socket_title" />
+
+        <Button
+          android:id="@+id/btn_io_client"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:text="Client io"
+          android:textAllCaps="false"
+          app:layout_constraintLeft_toRightOf="@id/btn_io"
+          app:layout_constraintRight_toLeftOf="@id/btn_okio"
+          app:layout_constraintTop_toTopOf="@id/btn_io_server" />
+
+        <Button
             android:id="@+id/btn_nio_server"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -67,7 +87,7 @@
             android:textAllCaps="false"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/btn_nio"
-            app:layout_constraintTop_toBottomOf="@id/socket_title" />
+            app:layout_constraintTop_toBottomOf="@id/btn_io_server" />
 
         <Button
             android:id="@+id/btn_nio_client"

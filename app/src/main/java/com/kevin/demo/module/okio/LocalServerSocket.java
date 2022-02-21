@@ -79,7 +79,7 @@ public class LocalServerSocket {
 
     public void stopServerIfNeed() {
         if (mThread != null && mThread.isAlive()) {
-            mThread.stop();
+            mThread.interrupt();
             mThread = null;
         }
     }
