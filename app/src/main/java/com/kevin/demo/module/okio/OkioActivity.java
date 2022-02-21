@@ -10,7 +10,6 @@ import com.kevin.demo.databinding.ActivityOkioBinding;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
