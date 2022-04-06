@@ -29,7 +29,12 @@ class BridgeActivity : FlutterActivity() {
   }
 
   override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
-    GeneratedPluginRegistrant.registerWith(flutterEngine);
+    GeneratedPluginRegistrant.registerWith(flutterEngine)
+
+//    Flutter定义了三种不同类型的Platform Channel用于Flutter与Host App平台进行通信，它们分别是
+//    BasicMessageChannel：用于传递字符串和半结构化的信息，可以双向的请求数据。
+//    MethodChannel：用于传递方法调用（method invocation，即Flutter端可以调用Platform端的方法并通过Result接口回调结果数据。
+//    EventChannel: 用于数据流（event streams）的通信，即Flutter端监听Platform端的实时消息，一旦Platform端产生了数据，立即回调到Flutter端。
 
     // 1.创建MethodChannel对象
     val methodChannel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL)
