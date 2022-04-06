@@ -136,6 +136,7 @@
     <activity android:name=".module.datastore.DataStoreActivity" />
 
 
+    <activity android:name=".module.flutter.BridgeActivity"/>
     <!--   注册Flutter提供的Activity     -->
     <activity
       android:name="io.flutter.embedding.android.FlutterActivity"

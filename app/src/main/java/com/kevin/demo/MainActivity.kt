@@ -22,6 +22,7 @@ import com.kevin.demo.module.databinding.DataBindingActivity
 import com.kevin.demo.module.datastore.DataStoreActivity
 import com.kevin.demo.module.db.DBActivity
 import com.kevin.demo.module.fadingedge.FadingEdgeActivity
+import com.kevin.demo.module.flutter.BridgeActivity
 import com.kevin.demo.module.fps.FpsMonitorActivity
 import com.kevin.demo.module.handler.HandlerActivity
 import com.kevin.demo.module.inflater.LayoutInflaterActivity
@@ -39,8 +40,6 @@ import com.kevin.demo.module.tint.DrawableTintActivity
 import com.kevin.demo.module.touch.TouchEventActivity
 import com.kevin.demo.module.view.ViewMeasureActivity
 import com.kevin.demo.module.view.ViewTraversalActivity
-import io.flutter.embedding.android.FlutterActivity
-import io.flutter.embedding.android.FlutterActivityLaunchConfigs
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -55,13 +54,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
   override fun initView(savedInstanceState: Bundle?) {
     binding.btnFlutter.setOnClickListener {
-      var intent = FlutterActivity.createDefaultIntent(this)
+//      var intent = FlutterActivity.createDefaultIntent(this)
 //      var intent = FlutterActivity.withNewEngine()
 //        // 背景颜色，透明 or 不透明
 //        .backgroundMode(FlutterActivityLaunchConfigs.BackgroundMode.transparent)
 //        // 指定跳转的路由 home 页面
 //        .initialRoute("home")
 //        .build(this)
+
+      var intent = BridgeActivity.withNewEngine().build(this)
+      intent.setClass(this, BridgeActivity::class.java)
       startActivity(intent)
     }
 
