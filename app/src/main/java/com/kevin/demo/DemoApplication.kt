@@ -13,8 +13,13 @@ import com.tencent.mmkv.MMKVRecoverStrategic
  */
 class DemoApplication : Application() {
 
+    companion object {
+        var sInstance: DemoApplication? = null
+    }
+
     override fun onCreate() {
         super.onCreate()
+        sInstance = this
         MultiDex.install(this)
 
         // MMKV初始化

@@ -10,6 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import com.kevin.demo.base.BaseActivity
 import com.kevin.demo.databinding.ActivityMainBinding
+import com.kevin.demo.hook.HookHelper
+import com.kevin.demo.hook.TargetActivity
 import com.kevin.demo.module.affinity.StandardActivity
 import com.kevin.demo.module.aidl.AidlActivity
 import com.kevin.demo.module.animationdra.DrawableAnimActivity
@@ -50,9 +52,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
   override fun onCreate(savedInstanceState: Bundle?) {
     updateFontScale(1.3f)
     super.onCreate(savedInstanceState)
+    HookHelper.startHook();
   }
 
   override fun initView(savedInstanceState: Bundle?) {
+    binding.btnHookStart.setOnClickListener {
+      // TargetActivity没有在清单文件中配置
+      var intent = Intent(this, TargetActivity::class.java)
+      startActivity(intent)
+    }
+
     binding.btnFlutter.setOnClickListener {
 //      var intent = FlutterActivity.createDefaultIntent(this)
 //      var intent = FlutterActivity.withNewEngine()
