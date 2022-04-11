@@ -14,6 +14,7 @@ import com.kevin.demo.hook.HookHelper
 import com.kevin.demo.hook.TargetActivity
 import com.kevin.demo.module.affinity.StandardActivity
 import com.kevin.demo.module.aidl.AidlActivity
+import com.kevin.demo.module.aidl.MessengerActivity
 import com.kevin.demo.module.animationdra.DrawableAnimActivity
 import com.kevin.demo.module.banner.BannerActivity
 import com.kevin.demo.module.bitmap.BitmapActivity
@@ -152,6 +153,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     binding.btnSurfaceView.setOnClickListener {
       var intent = Intent(this, SurfaceViewActivity::class.java)
+      startActivity(intent)
+    }
+
+    binding.btnMessenger.setOnClickListener {
+      var intent = Intent(this, MessengerActivity::class.java)
       startActivity(intent)
     }
 

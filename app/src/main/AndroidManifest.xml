@@ -27,13 +27,7 @@
       </intent-filter>
     </activity>
 
-    <activity android:name="com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </activity>
+    <activity android:name="com.kevin.demo.module.coordinatorlayout.CoordinatorLayoutActivity"/>
 
     <activity
       android:name="com.kevin.demo.module.banner.BannerActivity"
@@ -55,40 +49,13 @@
       </intent-filter>
     </activity>
 
-    <activity android:name="com.kevin.demo.module.surfaceview.SurfaceViewActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
+    <activity android:name="com.kevin.demo.module.surfaceview.SurfaceViewActivity"/>
+    <activity android:name="com.kevin.demo.module.aidl.MessengerActivity"/>
+    <activity android:name="com.kevin.demo.module.aidl.AidlActivity"/>
+    <activity android:name="com.kevin.demo.module.notification.NotificationActivity"/>
 
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </activity>
-
-    <activity android:name="com.kevin.demo.module.aidl.AidlActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </activity>
-
-    <activity android:name="com.kevin.demo.module.notification.NotificationActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </activity>
-
-    <activity android:name="com.kevin.demo.module.tablayout.TabLayoutActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
-
-        <category android:name="android.intent.category.DEFAULT" />
-      </intent-filter>
-    </activity>
-
+    <activity android:name="com.kevin.demo.module.tablayout.TabLayoutActivity"/>
     <activity android:name="com.kevin.demo.module.tint.DrawableTintActivity" />
-
     <activity android:name=".module.service.ServiceActivity" />
 
     <activity
@@ -114,9 +81,7 @@
       android:taskAffinity="com.taskaffinity" />
 
     <activity android:name=".module.fadingedge.FadingEdgeActivity" />
-
     <activity android:name=".module.databinding.DataBindingActivity" />
-
     <activity android:name=".module.lottie.LottieActivity" />
     <activity android:name=".module.customview.CustomActivity" />
     <activity android:name=".module.constraintlayout.ConstraintLayoutActivity" />

@@ -25,6 +25,15 @@
                 <action android:name="com.kevin.aidlserver.AidlService"/>
             </intent-filter>
         </service>
+
+        <service
+          android:name="com.kevin.aidlserver.MessengerService"
+          android:exported="true"
+          android:process=":remote">
+            <intent-filter>
+                <action android:name="com.kevin.aidlserver.MessengerService"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
