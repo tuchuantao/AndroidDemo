@@ -3,6 +3,7 @@ package com.kevin.aidlserver
 import android.app.Service
 import android.content.Intent
 import android.os.IBinder
+import android.util.Log
 
 /**
  * Create by Kevin-Tu on 2019/7/23.
@@ -57,6 +58,12 @@ class AidlService : Service() {
             android.util.Log.v("kevin", "iBinder testOneway() start  ${Thread.currentThread()}")
             Thread.sleep(2000)
             android.util.Log.v("kevin", "iBinder testOneway() end")
+        }
+
+        override fun setCallback(deathCallback: IBinder) {
+            deathCallback.linkToDeath({
+                Log.v("kevin", "setCallback() linkToDeath()  deathCallback = ${deathCallback}")
+            }, 0)
         }
     }
 

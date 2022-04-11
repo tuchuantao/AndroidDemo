@@ -2,6 +2,7 @@
 package com.kevin.aidlserver;
 
 import com.kevin.aidlserver.User; // note 不要忘记导包，哪怕在同一包下
+import android.os.IBinder;
 
 // Declare any non-default types here with import statements
 interface IMyAidlInterface {
@@ -25,4 +26,6 @@ interface IMyAidlInterface {
     void testNoOneway(in User user);
 
     oneway void testOneway(in User user);
+
+    void setCallback(in IBinder deathCallback);
 }

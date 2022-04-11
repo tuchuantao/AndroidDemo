@@ -4,6 +4,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
+import android.os.Binder
 import android.os.IBinder
 import android.util.Log
 import com.kevin.aidlserver.IMyAidlInterface
@@ -21,6 +22,7 @@ object AidlServiceWrapper {
     private var mAidlService: IMyAidlInterface? = null
     private var mServiceConnection: ServiceConnection
     private var mDeathRecipient: IBinder.DeathRecipient
+    private var mBinder: Binder? = null;
 
     init {
         mDeathRecipient = IBinder.DeathRecipient {
@@ -42,6 +44,9 @@ object AidlServiceWrapper {
 //                    e.printStackTrace()
 //                }
 
+                mBinder = Binder();
+                mAidlService!!.setCallback(mBinder);
+
                 synchronized(mListeners) {
                     if (!mListeners.isEmpty()) {
                         val lisLength = mListeners.size
@@ -53,6 +58,7 @@ object AidlServiceWrapper {
             }
 
             override fun onServiceDisconnected(name: ComponentName) {
+                Log.d("kevin", "AidlServiceWrapper onServiceDisconnected() name=$name")
                 mAidlService = null
 
                 synchronized(mListeners) {
