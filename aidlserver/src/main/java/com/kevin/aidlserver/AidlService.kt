@@ -67,8 +67,23 @@ class AidlService : Service() {
         }
     }
 
+    override fun onCreate() {
+        Log.v("kevin", "AidlService onCreate() IBinder=$iBinder")
+        super.onCreate()
+    }
+
     override fun onBind(intent: Intent?): IBinder? {
         android.util.Log.v("kevin", "AidlService onBind() IBinder=$iBinder")
         return iBinder
+    }
+
+    override fun onRebind(intent: Intent?) {
+        super.onRebind(intent)
+        Log.v("kevin", "AidlService onRebind() IBinder=$iBinder")
+    }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        Log.v("kevin", "AidlService onStartCommand() IBinder=$iBinder")
+        return super.onStartCommand(intent, flags, startId)
     }
 }

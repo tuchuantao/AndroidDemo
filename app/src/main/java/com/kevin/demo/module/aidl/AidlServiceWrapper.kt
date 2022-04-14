@@ -100,6 +100,7 @@ object AidlServiceWrapper {
         if (componentName != null) { // 判断Service是否存在
             intent.component = componentName
             mAppContext?.bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE)
+//            mAppContext?.bindService(intent, mServiceConnection, 0)
             return true
         }
         /*var intent = Intent();
