@@ -7,6 +7,10 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 
 
 /**
@@ -27,6 +31,12 @@ open abstract class BaseActivity<T: ViewDataBinding> : AppCompatActivity() {
         }
 
         initView(savedInstanceState)
+
+        lifecycle.addObserver(object : LifecycleEventObserver {
+            override fun onStateChanged(source: LifecycleOwner, event: Lifecycle.Event) {
+                Log.d("Lifecycle2", this::class.java.simpleName + "  onStateChanged() source= " + source + " event= " + event)
+            }
+        })
     }
 
     private fun initBinding(): T {
