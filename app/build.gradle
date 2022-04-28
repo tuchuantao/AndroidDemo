@@ -143,3 +143,94 @@ dependencies {
     // optional - Test helpers for LiveData
     testImplementation "androidx.arch.core:core-testing:$arch_version"
 }
+
+
+
+// Groovy
+// NOTE: 会被 Gradle 编译成 Java 类字节码，然后通过 Jvm 来执行这个 Java 类
+/**
+task stringText {
+    // 使用 def 关键字
+    def str1 = "双引号"
+    def str2 = '单引号'
+
+    println(str1 + str2)
+    println("result=${str1}")
+}
+
+task list {
+    // 定义集合
+    def list = [1, 2, 3, 4, 5]
+    def weekList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
+    println(list)
+    println(list[0])
+    println(weekList)
+}
+
+task map {
+    def map = ['name':'lilei', 'age':'18']
+    println(map)
+    println map['name']
+    map.each {
+        println "key:${it.key}, value:${it.value}"
+    }
+}
+
+task method {
+    println methodSub(2, 3)
+}
+
+// 定义一个方法
+def methodSub(int a, int b) {
+//    return a + b
+    a + b
+}
+
+task javaBean {
+    Person person = new Person()
+    person.name = "lily"
+    person.age = 18
+
+    println("name=${person.name}, age=${person.age}")
+    println("name=${person.getName()}, age=${person.getAge()}")
+}
+
+// 定义类
+class Person {
+    String name
+    private int age  // private 没有效果
+
+    String getName() {
+        return name
+    }
+
+    int getAge() {
+        age
+    }
+}
+
+// 闭包
+task closure {
+    mEach {
+        println it
+    }
+
+    mEachWithParams { key, value ->
+        println "key:${key}, value:${value}"
+    }
+}
+
+def mEach(Closure<?> closure) {
+    for (i in 0..5) {
+        closure(i)
+    }
+}
+
+def mEachWithParams(Closure<?> closure) {
+    def map = ['name':'lilei', 'age':'18']
+    map.each {
+        closure(it.key, it.value)
+    }
+}
+ */
