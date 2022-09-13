@@ -1,11 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="8dp"
+            android:paddingBottom="30dp">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_select_img"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="Select Img"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_compress"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="Compress Bitmap"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="原始颜色:"/>
+
+                <EditText
+                    android:id="@+id/origin_color"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:maxLength="8"
+                    android:textSize="13sp"
+                    android:hint="请输入16进制"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:textSize="13sp"
+                    android:text="替换颜色:"/>
+
+                <EditText
+                    android:id="@+id/new_color"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:textSize="13sp"
+                    android:maxLength="8"
+                    android:hint="请输入16进制"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_replace"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:text="替换"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:text="重置"
+                android:textAllCaps="false"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitStart"/>
+        </LinearLayout>
+    </ScrollView>
 
 </layout>
