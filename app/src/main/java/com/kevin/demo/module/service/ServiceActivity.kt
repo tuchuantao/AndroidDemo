@@ -46,13 +46,13 @@ class ServiceActivity: BaseActivity<ActivityServiceBinding>() {
 
         binding.btnBind.setOnClickListener {
             var intent = getServiceIntent()
-            bindService(intent, connection, Context.BIND_AUTO_CREATE)
+            bindService(intent, connection!!, Context.BIND_AUTO_CREATE)
             //bindService(intent, connection, Context.BIND_NOT_FOREGROUND)
         }
 
         binding.btnUnbind.setOnClickListener {
             try {
-                unbindService(connection)
+                unbindService(connection!!)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

@@ -1,8 +1,1 @@
 include ':app', ':aidlserver'
-
-// NOTE: Flutter: 1、flutter 模块声明
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-        'flutterlib/.android/include_flutter.groovy'
-))
-include ':flutterlib'

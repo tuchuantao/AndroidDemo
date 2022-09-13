@@ -14,22 +14,13 @@
             android:paddingBottom="30dp">
 
             <Button
-              android:id="@+id/btn_hook_start"
-              android:layout_width="match_parent"
-              android:layout_height="60dp"
-              android:layout_marginTop="4dp"
-              android:text="Hook Start Activity"
-              android:textAllCaps="false"
-              android:textSize="18sp" />
-
-            <Button
-              android:id="@+id/btn_flutter"
-              android:layout_width="match_parent"
-              android:layout_height="60dp"
-              android:layout_marginTop="4dp"
-              android:text="Flutter"
-              android:textAllCaps="false"
-              android:textSize="18sp" />
+                android:id="@+id/btn_hook_start"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="Hook Start Activity"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_datastore"
@@ -176,13 +167,13 @@
                 android:textSize="18sp" />
 
             <Button
-              android:id="@+id/btn_messenger"
-              android:layout_width="match_parent"
-              android:layout_height="60dp"
-              android:layout_marginTop="4dp"
-              android:text="Messenger Activity"
-              android:textAllCaps="false"
-              android:textSize="18sp" />
+                android:id="@+id/btn_messenger"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="Messenger Activity"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/btn_aidl"
