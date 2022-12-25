@@ -30,6 +30,15 @@
                 android:textAllCaps="false"
                 android:textSize="18sp" />
 
+            <Button
+                android:id="@+id/btn_gaussian_blur"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:text="高斯模糊"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,14 +103,20 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="fitStart"/>
+                android:background="@drawable/img">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitStart"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

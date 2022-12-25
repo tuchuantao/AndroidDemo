@@ -10,6 +10,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -59,6 +63,15 @@ public class BitmapActivity extends BaseActivity<ActivityBitmapBinding> {
                 return;
             }
 //            binding.img.setImageBitmap(compressBitmap(mImgUri));
+        });
+
+        binding.btnGaussianBlur.setOnClickListener(view -> {
+            if (mImgUri == null) {
+                Toast.makeText(this, "Please select some img!!!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            binding.img.setImageBitmap(createGaussianBlurBitmap());
+            binding.img.setAlpha(160);
         });
 
         binding.originColor.addTextChangedListener(new TextWatcher() {
@@ -258,5 +271,29 @@ public class BitmapActivity extends BaseActivity<ActivityBitmapBinding> {
             bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
             imageView.setImageBitmap(bitmap);
         }).start();
+    }
+
+    private Bitmap createGaussianBlurBitmap() {
+        Bitmap inputBitmap = getBitmapAndHandleOrientation(mImgUri);
+        //创建将在ondraw中使用到的经过模糊处理后的bitmap
+        Bitmap outputBitmap = Bitmap.createBitmap(inputBitmap);
+
+        //创建RenderScript，ScriptIntrinsicBlur固定写法
+        RenderScript rs = RenderScript.create(getApplication());
+        ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+
+        //根据inputBitmap，outputBitmap分别分配内存
+        Allocation tmpIn = Allocation.createFromBitmap(rs, inputBitmap);
+        Allocation tmpOut = Allocation.createFromBitmap(rs, outputBitmap);
+
+        //设置模糊半径取值0-25之间，不同半径得到的模糊效果不同
+        blurScript.setRadius(25);
+        blurScript.setInput(tmpIn);
+        blurScript.forEach(tmpOut);
+
+        //得到最终的模糊bitmap
+        tmpOut.copyTo(outputBitmap);
+        inputBitmap.recycle();
+        return outputBitmap;
     }
 }
